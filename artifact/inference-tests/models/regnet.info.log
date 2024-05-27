@@ -1,0 +1,427 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v8601] # /usr/local/TensorRT-8.6.1.6/bin/trtexec --onnx=./regnet_y_16gf_Opset16.onnx --saveEngine=./regnet.engine --dumpLayerInfo
+[05/01/2024-14:15:30] [I] === Model Options ===
+[05/01/2024-14:15:30] [I] Format: ONNX
+[05/01/2024-14:15:30] [I] Model: ./regnet_y_16gf_Opset16.onnx
+[05/01/2024-14:15:30] [I] Output:
+[05/01/2024-14:15:30] [I] === Build Options ===
+[05/01/2024-14:15:30] [I] Max batch: explicit batch
+[05/01/2024-14:15:30] [I] Memory Pools: workspace: default, dlaSRAM: default, dlaLocalDRAM: default, dlaGlobalDRAM: default
+[05/01/2024-14:15:30] [I] minTiming: 1
+[05/01/2024-14:15:30] [I] avgTiming: 8
+[05/01/2024-14:15:30] [I] Precision: FP32
+[05/01/2024-14:15:30] [I] LayerPrecisions: 
+[05/01/2024-14:15:30] [I] Layer Device Types: 
+[05/01/2024-14:15:30] [I] Calibration: 
+[05/01/2024-14:15:30] [I] Refit: Disabled
+[05/01/2024-14:15:30] [I] Version Compatible: Disabled
+[05/01/2024-14:15:30] [I] TensorRT runtime: full
+[05/01/2024-14:15:30] [I] Lean DLL Path: 
+[05/01/2024-14:15:30] [I] Tempfile Controls: { in_memory: allow, temporary: allow }
+[05/01/2024-14:15:30] [I] Exclude Lean Runtime: Disabled
+[05/01/2024-14:15:30] [I] Sparsity: Disabled
+[05/01/2024-14:15:30] [I] Safe mode: Disabled
+[05/01/2024-14:15:30] [I] Build DLA standalone loadable: Disabled
+[05/01/2024-14:15:30] [I] Allow GPU fallback for DLA: Disabled
+[05/01/2024-14:15:30] [I] DirectIO mode: Disabled
+[05/01/2024-14:15:30] [I] Restricted mode: Disabled
+[05/01/2024-14:15:30] [I] Skip inference: Disabled
+[05/01/2024-14:15:30] [I] Save engine: ./regnet.engine
+[05/01/2024-14:15:30] [I] Load engine: 
+[05/01/2024-14:15:30] [I] Profiling verbosity: 0
+[05/01/2024-14:15:30] [I] Tactic sources: Using default tactic sources
+[05/01/2024-14:15:30] [I] timingCacheMode: local
+[05/01/2024-14:15:30] [I] timingCacheFile: 
+[05/01/2024-14:15:30] [I] Heuristic: Disabled
+[05/01/2024-14:15:30] [I] Preview Features: Use default preview flags.
+[05/01/2024-14:15:30] [I] MaxAuxStreams: -1
+[05/01/2024-14:15:30] [I] BuilderOptimizationLevel: -1
+[05/01/2024-14:15:30] [I] Input(s)s format: fp32:CHW
+[05/01/2024-14:15:30] [I] Output(s)s format: fp32:CHW
+[05/01/2024-14:15:30] [I] Input build shapes: model
+[05/01/2024-14:15:30] [I] Input calibration shapes: model
+[05/01/2024-14:15:30] [I] === System Options ===
+[05/01/2024-14:15:30] [I] Device: 0
+[05/01/2024-14:15:30] [I] DLACore: 
+[05/01/2024-14:15:30] [I] Plugins:
+[05/01/2024-14:15:30] [I] setPluginsToSerialize:
+[05/01/2024-14:15:30] [I] dynamicPlugins:
+[05/01/2024-14:15:30] [I] ignoreParsedPluginLibs: 0
+[05/01/2024-14:15:30] [I] 
+[05/01/2024-14:15:30] [I] === Inference Options ===
+[05/01/2024-14:15:30] [I] Batch: Explicit
+[05/01/2024-14:15:30] [I] Input inference shapes: model
+[05/01/2024-14:15:30] [I] Iterations: 10
+[05/01/2024-14:15:30] [I] Duration: 3s (+ 200ms warm up)
+[05/01/2024-14:15:30] [I] Sleep time: 0ms
+[05/01/2024-14:15:30] [I] Idle time: 0ms
+[05/01/2024-14:15:30] [I] Inference Streams: 1
+[05/01/2024-14:15:30] [I] ExposeDMA: Disabled
+[05/01/2024-14:15:30] [I] Data transfers: Enabled
+[05/01/2024-14:15:30] [I] Spin-wait: Disabled
+[05/01/2024-14:15:30] [I] Multithreading: Disabled
+[05/01/2024-14:15:30] [I] CUDA Graph: Disabled
+[05/01/2024-14:15:30] [I] Separate profiling: Disabled
+[05/01/2024-14:15:30] [I] Time Deserialize: Disabled
+[05/01/2024-14:15:30] [I] Time Refit: Disabled
+[05/01/2024-14:15:30] [I] NVTX verbosity: 0
+[05/01/2024-14:15:30] [I] Persistent Cache Ratio: 0
+[05/01/2024-14:15:30] [I] Inputs:
+[05/01/2024-14:15:30] [I] === Reporting Options ===
+[05/01/2024-14:15:30] [I] Verbose: Disabled
+[05/01/2024-14:15:30] [I] Averages: 10 inferences
+[05/01/2024-14:15:30] [I] Percentiles: 90,95,99
+[05/01/2024-14:15:30] [I] Dump refittable layers:Disabled
+[05/01/2024-14:15:30] [I] Dump output: Disabled
+[05/01/2024-14:15:30] [I] Profile: Disabled
+[05/01/2024-14:15:30] [I] Export timing to JSON file: 
+[05/01/2024-14:15:30] [I] Export output to JSON file: 
+[05/01/2024-14:15:30] [I] Export profile to JSON file: 
+[05/01/2024-14:15:30] [I] 
+[05/01/2024-14:15:32] [I] === Device Information ===
+[05/01/2024-14:15:32] [I] Selected Device: NVIDIA TITAN V
+[05/01/2024-14:15:32] [I] Compute Capability: 7.0
+[05/01/2024-14:15:32] [I] SMs: 80
+[05/01/2024-14:15:32] [I] Device Global Memory: 12042 MiB
+[05/01/2024-14:15:32] [I] Shared Memory per SM: 96 KiB
+[05/01/2024-14:15:32] [I] Memory Bus Width: 3072 bits (ECC disabled)
+[05/01/2024-14:15:32] [I] Application Compute Clock Rate: 1.455 GHz
+[05/01/2024-14:15:32] [I] Application Memory Clock Rate: 0.85 GHz
+[05/01/2024-14:15:32] [I] 
+[05/01/2024-14:15:32] [I] Note: The application clock rates do not reflect the actual clock rates that the GPU is currently running at.
+[05/01/2024-14:15:32] [I] 
+[05/01/2024-14:15:32] [I] TensorRT version: 8.6.1
+[05/01/2024-14:15:32] [I] Loading standard plugins
+[05/01/2024-14:15:33] [I] [TRT] [MemUsageChange] Init CUDA: CPU +17, GPU +0, now: CPU 23, GPU 309 (MiB)
+[05/01/2024-14:15:42] [I] [TRT] [MemUsageChange] Init builder kernel library: CPU +431, GPU +74, now: CPU 530, GPU 383 (MiB)
+[05/01/2024-14:15:42] [I] Start parsing network model.
+[05/01/2024-14:15:43] [I] [TRT] ----------------------------------------------------------------
+[05/01/2024-14:15:43] [I] [TRT] Input filename:   ./regnet_y_16gf_Opset16.onnx
+[05/01/2024-14:15:43] [I] [TRT] ONNX IR version:  0.0.8
+[05/01/2024-14:15:43] [I] [TRT] Opset version:    16
+[05/01/2024-14:15:43] [I] [TRT] Producer name:    pytorch
+[05/01/2024-14:15:43] [I] [TRT] Producer version: 2.1.0
+[05/01/2024-14:15:43] [I] [TRT] Domain:           
+[05/01/2024-14:15:43] [I] [TRT] Model version:    0
+[05/01/2024-14:15:43] [I] [TRT] Doc string:       
+[05/01/2024-14:15:43] [I] [TRT] ----------------------------------------------------------------
+[05/01/2024-14:15:43] [I] Finished parsing network model. Parse time: 1.17453
+[05/01/2024-14:15:43] [I] [TRT] BuilderFlag::kTF32 is set but hardware does not support TF32. Disabling TF32.
+[05/01/2024-14:15:44] [I] [TRT] Graph optimization time: 0.131685 seconds.
+[05/01/2024-14:15:44] [I] [TRT] BuilderFlag::kTF32 is set but hardware does not support TF32. Disabling TF32.
+[05/01/2024-14:15:44] [I] [TRT] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[05/01/2024-14:16:54] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[05/01/2024-14:16:55] [I] [TRT] Total Host Persistent Memory: 633024
+[05/01/2024-14:16:55] [I] [TRT] Total Device Persistent Memory: 187904
+[05/01/2024-14:16:55] [I] [TRT] Total Scratch Memory: 3147264
+[05/01/2024-14:16:55] [I] [TRT] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 34 MiB, GPU 320 MiB
+[05/01/2024-14:16:55] [I] [TRT] [BlockAssignment] Started assigning block shifts. This will take 235 steps to complete.
+[05/01/2024-14:16:55] [I] [TRT] [BlockAssignment] Algorithm ShiftNTopDown took 16.1206ms to assign 6 blocks to 235 nodes requiring 19671040 bytes.
+[05/01/2024-14:16:55] [I] [TRT] Total Activation Memory: 19670528
+[05/01/2024-14:16:55] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in building engine: CPU +0, GPU +320, now: CPU 0, GPU 320 (MiB)
+[05/01/2024-14:16:56] [I] Engine built in 84.127 sec.
+[05/01/2024-14:16:56] [I] [TRT] Loaded engine size: 322 MiB
+[05/01/2024-14:16:57] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +319, now: CPU 0, GPU 319 (MiB)
+[05/01/2024-14:16:57] [I] Engine deserialized in 0.143811 sec.
+[05/01/2024-14:16:57] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +19, now: CPU 0, GPU 338 (MiB)
+[05/01/2024-14:16:57] [I] Setting persistentCacheLimit to 0 bytes.
+[05/01/2024-14:16:57] [I] Using random values for input x
+[05/01/2024-14:16:57] [I] Input binding for x with dimensions 1x3x224x224 is created.
+[05/01/2024-14:16:57] [I] Output binding for 730 with dimensions 1x1000 is created.
+[05/01/2024-14:16:57] [I] Layer Information:
+[05/01/2024-14:16:57] [I] [TRT] The profiling verbosity was set to ProfilingVerbosity::kLAYER_NAMES_ONLY when the engine was built, so only the layer names will be returned. Rebuild the engine with ProfilingVerbosity::kDETAILED to get more verbose layer information.
+[05/01/2024-14:16:57] [I] Layers:
+/stem/stem.0/Conv + /stem/stem.2/Relu
+Reformatting CopyNode for Output Tensor 0 to /stem/stem.0/Conv + /stem/stem.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block1/block1-0/proj/proj.0/Conv
+/trunk_output/block1/block1-0/proj/proj.0/Conv
+/trunk_output/block1/block1-0/f/a/a.0/Conv + /trunk_output/block1/block1-0/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block1/block1-0/f/b/b.0/Conv + /trunk_output/block1/block1-0/f/b/b.2/Relu
+/trunk_output/block1/block1-0/f/b/b.0/Conv + /trunk_output/block1/block1-0/f/b/b.2/Relu
+/trunk_output/block1/block1-0/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block1/block1-0/f/se/fc1/Conv + /trunk_output/block1/block1-0/f/se/activation/Relu
+/trunk_output/block1/block1-0/f/se/fc1/Conv + /trunk_output/block1/block1-0/f/se/activation/Relu
+/trunk_output/block1/block1-0/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block1/block1-0/f/se/scale_activation/Sigmoid), /trunk_output/block1/block1-0/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block1/block1-0/f/se/scale_activation/Sigmoid), /trunk_output/block1/block1-0/f/se/Mul)
+PWN(PWN(/trunk_output/block1/block1-0/f/se/scale_activation/Sigmoid), /trunk_output/block1/block1-0/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to /trunk_output/block1/block1-0/f/c/c.0/Conv + /trunk_output/block1/block1-0/Add + /trunk_output/block1/block1-0/activation/Relu
+/trunk_output/block1/block1-0/f/c/c.0/Conv + /trunk_output/block1/block1-0/Add + /trunk_output/block1/block1-0/activation/Relu
+/trunk_output/block1/block1-1/f/a/a.0/Conv + /trunk_output/block1/block1-1/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block1/block1-1/f/b/b.0/Conv + /trunk_output/block1/block1-1/f/b/b.2/Relu
+/trunk_output/block1/block1-1/f/b/b.0/Conv + /trunk_output/block1/block1-1/f/b/b.2/Relu
+Reformatting CopyNode for Output Tensor 0 to /trunk_output/block1/block1-1/f/b/b.0/Conv + /trunk_output/block1/block1-1/f/b/b.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block1/block1-1/f/se/avgpool/GlobalAveragePool
+/trunk_output/block1/block1-1/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block1/block1-1/f/se/fc1/Conv + /trunk_output/block1/block1-1/f/se/activation/Relu
+/trunk_output/block1/block1-1/f/se/fc1/Conv + /trunk_output/block1/block1-1/f/se/activation/Relu
+/trunk_output/block1/block1-1/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block1/block1-1/f/se/scale_activation/Sigmoid), /trunk_output/block1/block1-1/f/se/Mul)
+PWN(PWN(/trunk_output/block1/block1-1/f/se/scale_activation/Sigmoid), /trunk_output/block1/block1-1/f/se/Mul)
+/trunk_output/block1/block1-1/f/c/c.0/Conv + /trunk_output/block1/block1-1/Add + /trunk_output/block1/block1-1/activation/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block2/block2-0/proj/proj.0/Conv
+/trunk_output/block2/block2-0/proj/proj.0/Conv
+/trunk_output/block2/block2-0/f/a/a.0/Conv + /trunk_output/block2/block2-0/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block2/block2-0/f/b/b.0/Conv + /trunk_output/block2/block2-0/f/b/b.2/Relu
+/trunk_output/block2/block2-0/f/b/b.0/Conv + /trunk_output/block2/block2-0/f/b/b.2/Relu
+/trunk_output/block2/block2-0/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block2/block2-0/f/se/fc1/Conv + /trunk_output/block2/block2-0/f/se/activation/Relu
+/trunk_output/block2/block2-0/f/se/fc1/Conv + /trunk_output/block2/block2-0/f/se/activation/Relu
+/trunk_output/block2/block2-0/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block2/block2-0/f/se/scale_activation/Sigmoid), /trunk_output/block2/block2-0/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block2/block2-0/f/se/scale_activation/Sigmoid), /trunk_output/block2/block2-0/f/se/Mul)
+PWN(PWN(/trunk_output/block2/block2-0/f/se/scale_activation/Sigmoid), /trunk_output/block2/block2-0/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to /trunk_output/block2/block2-0/f/c/c.0/Conv + /trunk_output/block2/block2-0/Add + /trunk_output/block2/block2-0/activation/Relu
+/trunk_output/block2/block2-0/f/c/c.0/Conv + /trunk_output/block2/block2-0/Add + /trunk_output/block2/block2-0/activation/Relu
+/trunk_output/block2/block2-1/f/a/a.0/Conv + /trunk_output/block2/block2-1/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block2/block2-1/f/b/b.0/Conv + /trunk_output/block2/block2-1/f/b/b.2/Relu
+/trunk_output/block2/block2-1/f/b/b.0/Conv + /trunk_output/block2/block2-1/f/b/b.2/Relu
+/trunk_output/block2/block2-1/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block2/block2-1/f/se/fc1/Conv + /trunk_output/block2/block2-1/f/se/activation/Relu
+/trunk_output/block2/block2-1/f/se/fc1/Conv + /trunk_output/block2/block2-1/f/se/activation/Relu
+/trunk_output/block2/block2-1/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block2/block2-1/f/se/scale_activation/Sigmoid), /trunk_output/block2/block2-1/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block2/block2-1/f/se/scale_activation/Sigmoid), /trunk_output/block2/block2-1/f/se/Mul)
+PWN(PWN(/trunk_output/block2/block2-1/f/se/scale_activation/Sigmoid), /trunk_output/block2/block2-1/f/se/Mul)
+/trunk_output/block2/block2-1/f/c/c.0/Conv + /trunk_output/block2/block2-1/Add + /trunk_output/block2/block2-1/activation/Relu
+/trunk_output/block2/block2-2/f/a/a.0/Conv + /trunk_output/block2/block2-2/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block2/block2-2/f/b/b.0/Conv + /trunk_output/block2/block2-2/f/b/b.2/Relu
+/trunk_output/block2/block2-2/f/b/b.0/Conv + /trunk_output/block2/block2-2/f/b/b.2/Relu
+/trunk_output/block2/block2-2/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block2/block2-2/f/se/fc1/Conv + /trunk_output/block2/block2-2/f/se/activation/Relu
+/trunk_output/block2/block2-2/f/se/fc1/Conv + /trunk_output/block2/block2-2/f/se/activation/Relu
+/trunk_output/block2/block2-2/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block2/block2-2/f/se/scale_activation/Sigmoid), /trunk_output/block2/block2-2/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block2/block2-2/f/se/scale_activation/Sigmoid), /trunk_output/block2/block2-2/f/se/Mul)
+PWN(PWN(/trunk_output/block2/block2-2/f/se/scale_activation/Sigmoid), /trunk_output/block2/block2-2/f/se/Mul)
+/trunk_output/block2/block2-2/f/c/c.0/Conv + /trunk_output/block2/block2-2/Add + /trunk_output/block2/block2-2/activation/Relu
+/trunk_output/block2/block2-3/f/a/a.0/Conv + /trunk_output/block2/block2-3/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block2/block2-3/f/b/b.0/Conv + /trunk_output/block2/block2-3/f/b/b.2/Relu
+/trunk_output/block2/block2-3/f/b/b.0/Conv + /trunk_output/block2/block2-3/f/b/b.2/Relu
+/trunk_output/block2/block2-3/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block2/block2-3/f/se/fc1/Conv + /trunk_output/block2/block2-3/f/se/activation/Relu
+/trunk_output/block2/block2-3/f/se/fc1/Conv + /trunk_output/block2/block2-3/f/se/activation/Relu
+/trunk_output/block2/block2-3/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block2/block2-3/f/se/scale_activation/Sigmoid), /trunk_output/block2/block2-3/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block2/block2-3/f/se/scale_activation/Sigmoid), /trunk_output/block2/block2-3/f/se/Mul)
+PWN(PWN(/trunk_output/block2/block2-3/f/se/scale_activation/Sigmoid), /trunk_output/block2/block2-3/f/se/Mul)
+/trunk_output/block2/block2-3/f/c/c.0/Conv + /trunk_output/block2/block2-3/Add + /trunk_output/block2/block2-3/activation/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-0/proj/proj.0/Conv
+/trunk_output/block3/block3-0/proj/proj.0/Conv
+/trunk_output/block3/block3-0/f/a/a.0/Conv + /trunk_output/block3/block3-0/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-0/f/b/b.0/Conv + /trunk_output/block3/block3-0/f/b/b.2/Relu
+/trunk_output/block3/block3-0/f/b/b.0/Conv + /trunk_output/block3/block3-0/f/b/b.2/Relu
+/trunk_output/block3/block3-0/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-0/f/se/fc1/Conv + /trunk_output/block3/block3-0/f/se/activation/Relu
+/trunk_output/block3/block3-0/f/se/fc1/Conv + /trunk_output/block3/block3-0/f/se/activation/Relu
+/trunk_output/block3/block3-0/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block3/block3-0/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-0/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block3/block3-0/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-0/f/se/Mul)
+PWN(PWN(/trunk_output/block3/block3-0/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-0/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to /trunk_output/block3/block3-0/f/c/c.0/Conv + /trunk_output/block3/block3-0/Add + /trunk_output/block3/block3-0/activation/Relu
+/trunk_output/block3/block3-0/f/c/c.0/Conv + /trunk_output/block3/block3-0/Add + /trunk_output/block3/block3-0/activation/Relu
+/trunk_output/block3/block3-1/f/a/a.0/Conv + /trunk_output/block3/block3-1/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-1/f/b/b.0/Conv + /trunk_output/block3/block3-1/f/b/b.2/Relu
+/trunk_output/block3/block3-1/f/b/b.0/Conv + /trunk_output/block3/block3-1/f/b/b.2/Relu
+/trunk_output/block3/block3-1/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-1/f/se/fc1/Conv + /trunk_output/block3/block3-1/f/se/activation/Relu
+/trunk_output/block3/block3-1/f/se/fc1/Conv + /trunk_output/block3/block3-1/f/se/activation/Relu
+/trunk_output/block3/block3-1/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block3/block3-1/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-1/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block3/block3-1/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-1/f/se/Mul)
+PWN(PWN(/trunk_output/block3/block3-1/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-1/f/se/Mul)
+/trunk_output/block3/block3-1/f/c/c.0/Conv + /trunk_output/block3/block3-1/Add + /trunk_output/block3/block3-1/activation/Relu
+/trunk_output/block3/block3-2/f/a/a.0/Conv + /trunk_output/block3/block3-2/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-2/f/b/b.0/Conv + /trunk_output/block3/block3-2/f/b/b.2/Relu
+/trunk_output/block3/block3-2/f/b/b.0/Conv + /trunk_output/block3/block3-2/f/b/b.2/Relu
+/trunk_output/block3/block3-2/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-2/f/se/fc1/Conv + /trunk_output/block3/block3-2/f/se/activation/Relu
+/trunk_output/block3/block3-2/f/se/fc1/Conv + /trunk_output/block3/block3-2/f/se/activation/Relu
+/trunk_output/block3/block3-2/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block3/block3-2/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-2/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block3/block3-2/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-2/f/se/Mul)
+PWN(PWN(/trunk_output/block3/block3-2/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-2/f/se/Mul)
+/trunk_output/block3/block3-2/f/c/c.0/Conv + /trunk_output/block3/block3-2/Add + /trunk_output/block3/block3-2/activation/Relu
+/trunk_output/block3/block3-3/f/a/a.0/Conv + /trunk_output/block3/block3-3/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-3/f/b/b.0/Conv + /trunk_output/block3/block3-3/f/b/b.2/Relu
+/trunk_output/block3/block3-3/f/b/b.0/Conv + /trunk_output/block3/block3-3/f/b/b.2/Relu
+/trunk_output/block3/block3-3/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-3/f/se/fc1/Conv + /trunk_output/block3/block3-3/f/se/activation/Relu
+/trunk_output/block3/block3-3/f/se/fc1/Conv + /trunk_output/block3/block3-3/f/se/activation/Relu
+/trunk_output/block3/block3-3/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block3/block3-3/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-3/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block3/block3-3/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-3/f/se/Mul)
+PWN(PWN(/trunk_output/block3/block3-3/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-3/f/se/Mul)
+/trunk_output/block3/block3-3/f/c/c.0/Conv + /trunk_output/block3/block3-3/Add + /trunk_output/block3/block3-3/activation/Relu
+/trunk_output/block3/block3-4/f/a/a.0/Conv + /trunk_output/block3/block3-4/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-4/f/b/b.0/Conv + /trunk_output/block3/block3-4/f/b/b.2/Relu
+/trunk_output/block3/block3-4/f/b/b.0/Conv + /trunk_output/block3/block3-4/f/b/b.2/Relu
+/trunk_output/block3/block3-4/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-4/f/se/fc1/Conv + /trunk_output/block3/block3-4/f/se/activation/Relu
+/trunk_output/block3/block3-4/f/se/fc1/Conv + /trunk_output/block3/block3-4/f/se/activation/Relu
+/trunk_output/block3/block3-4/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block3/block3-4/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-4/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block3/block3-4/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-4/f/se/Mul)
+PWN(PWN(/trunk_output/block3/block3-4/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-4/f/se/Mul)
+/trunk_output/block3/block3-4/f/c/c.0/Conv + /trunk_output/block3/block3-4/Add + /trunk_output/block3/block3-4/activation/Relu
+/trunk_output/block3/block3-5/f/a/a.0/Conv + /trunk_output/block3/block3-5/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-5/f/b/b.0/Conv + /trunk_output/block3/block3-5/f/b/b.2/Relu
+/trunk_output/block3/block3-5/f/b/b.0/Conv + /trunk_output/block3/block3-5/f/b/b.2/Relu
+/trunk_output/block3/block3-5/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-5/f/se/fc1/Conv + /trunk_output/block3/block3-5/f/se/activation/Relu
+/trunk_output/block3/block3-5/f/se/fc1/Conv + /trunk_output/block3/block3-5/f/se/activation/Relu
+/trunk_output/block3/block3-5/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block3/block3-5/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-5/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block3/block3-5/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-5/f/se/Mul)
+PWN(PWN(/trunk_output/block3/block3-5/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-5/f/se/Mul)
+/trunk_output/block3/block3-5/f/c/c.0/Conv + /trunk_output/block3/block3-5/Add + /trunk_output/block3/block3-5/activation/Relu
+/trunk_output/block3/block3-6/f/a/a.0/Conv + /trunk_output/block3/block3-6/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-6/f/b/b.0/Conv + /trunk_output/block3/block3-6/f/b/b.2/Relu
+/trunk_output/block3/block3-6/f/b/b.0/Conv + /trunk_output/block3/block3-6/f/b/b.2/Relu
+/trunk_output/block3/block3-6/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-6/f/se/fc1/Conv + /trunk_output/block3/block3-6/f/se/activation/Relu
+/trunk_output/block3/block3-6/f/se/fc1/Conv + /trunk_output/block3/block3-6/f/se/activation/Relu
+/trunk_output/block3/block3-6/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block3/block3-6/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-6/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block3/block3-6/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-6/f/se/Mul)
+PWN(PWN(/trunk_output/block3/block3-6/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-6/f/se/Mul)
+/trunk_output/block3/block3-6/f/c/c.0/Conv + /trunk_output/block3/block3-6/Add + /trunk_output/block3/block3-6/activation/Relu
+/trunk_output/block3/block3-7/f/a/a.0/Conv + /trunk_output/block3/block3-7/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-7/f/b/b.0/Conv + /trunk_output/block3/block3-7/f/b/b.2/Relu
+/trunk_output/block3/block3-7/f/b/b.0/Conv + /trunk_output/block3/block3-7/f/b/b.2/Relu
+/trunk_output/block3/block3-7/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-7/f/se/fc1/Conv + /trunk_output/block3/block3-7/f/se/activation/Relu
+/trunk_output/block3/block3-7/f/se/fc1/Conv + /trunk_output/block3/block3-7/f/se/activation/Relu
+/trunk_output/block3/block3-7/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block3/block3-7/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-7/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block3/block3-7/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-7/f/se/Mul)
+PWN(PWN(/trunk_output/block3/block3-7/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-7/f/se/Mul)
+/trunk_output/block3/block3-7/f/c/c.0/Conv + /trunk_output/block3/block3-7/Add + /trunk_output/block3/block3-7/activation/Relu
+/trunk_output/block3/block3-8/f/a/a.0/Conv + /trunk_output/block3/block3-8/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-8/f/b/b.0/Conv + /trunk_output/block3/block3-8/f/b/b.2/Relu
+/trunk_output/block3/block3-8/f/b/b.0/Conv + /trunk_output/block3/block3-8/f/b/b.2/Relu
+/trunk_output/block3/block3-8/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-8/f/se/fc1/Conv + /trunk_output/block3/block3-8/f/se/activation/Relu
+/trunk_output/block3/block3-8/f/se/fc1/Conv + /trunk_output/block3/block3-8/f/se/activation/Relu
+/trunk_output/block3/block3-8/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block3/block3-8/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-8/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block3/block3-8/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-8/f/se/Mul)
+PWN(PWN(/trunk_output/block3/block3-8/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-8/f/se/Mul)
+/trunk_output/block3/block3-8/f/c/c.0/Conv + /trunk_output/block3/block3-8/Add + /trunk_output/block3/block3-8/activation/Relu
+/trunk_output/block3/block3-9/f/a/a.0/Conv + /trunk_output/block3/block3-9/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-9/f/b/b.0/Conv + /trunk_output/block3/block3-9/f/b/b.2/Relu
+/trunk_output/block3/block3-9/f/b/b.0/Conv + /trunk_output/block3/block3-9/f/b/b.2/Relu
+/trunk_output/block3/block3-9/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-9/f/se/fc1/Conv + /trunk_output/block3/block3-9/f/se/activation/Relu
+/trunk_output/block3/block3-9/f/se/fc1/Conv + /trunk_output/block3/block3-9/f/se/activation/Relu
+/trunk_output/block3/block3-9/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block3/block3-9/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-9/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block3/block3-9/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-9/f/se/Mul)
+PWN(PWN(/trunk_output/block3/block3-9/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-9/f/se/Mul)
+/trunk_output/block3/block3-9/f/c/c.0/Conv + /trunk_output/block3/block3-9/Add + /trunk_output/block3/block3-9/activation/Relu
+/trunk_output/block3/block3-10/f/a/a.0/Conv + /trunk_output/block3/block3-10/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-10/f/b/b.0/Conv + /trunk_output/block3/block3-10/f/b/b.2/Relu
+/trunk_output/block3/block3-10/f/b/b.0/Conv + /trunk_output/block3/block3-10/f/b/b.2/Relu
+/trunk_output/block3/block3-10/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block3/block3-10/f/se/fc1/Conv + /trunk_output/block3/block3-10/f/se/activation/Relu
+/trunk_output/block3/block3-10/f/se/fc1/Conv + /trunk_output/block3/block3-10/f/se/activation/Relu
+/trunk_output/block3/block3-10/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block3/block3-10/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-10/f/se/Mul)
+Reformatting CopyNode for Input Tensor 1 to PWN(PWN(/trunk_output/block3/block3-10/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-10/f/se/Mul)
+PWN(PWN(/trunk_output/block3/block3-10/f/se/scale_activation/Sigmoid), /trunk_output/block3/block3-10/f/se/Mul)
+/trunk_output/block3/block3-10/f/c/c.0/Conv + /trunk_output/block3/block3-10/Add + /trunk_output/block3/block3-10/activation/Relu
+/trunk_output/block4/block4-0/proj/proj.0/Conv
+/trunk_output/block4/block4-0/f/a/a.0/Conv + /trunk_output/block4/block4-0/f/a/a.2/Relu
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block4/block4-0/f/b/b.0/Conv + /trunk_output/block4/block4-0/f/b/b.2/Relu
+/trunk_output/block4/block4-0/f/b/b.0/Conv + /trunk_output/block4/block4-0/f/b/b.2/Relu
+/trunk_output/block4/block4-0/f/se/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block4/block4-0/f/se/fc1/Conv + /trunk_output/block4/block4-0/f/se/activation/Relu
+/trunk_output/block4/block4-0/f/se/fc1/Conv + /trunk_output/block4/block4-0/f/se/activation/Relu
+/trunk_output/block4/block4-0/f/se/fc2/Conv
+Reformatting CopyNode for Input Tensor 0 to PWN(PWN(/trunk_output/block4/block4-0/f/se/scale_activation/Sigmoid), /trunk_output/block4/block4-0/f/se/Mul)
+PWN(PWN(/trunk_output/block4/block4-0/f/se/scale_activation/Sigmoid), /trunk_output/block4/block4-0/f/se/Mul)
+Reformatting CopyNode for Input Tensor 0 to /trunk_output/block4/block4-0/f/c/c.0/Conv + /trunk_output/block4/block4-0/Add + /trunk_output/block4/block4-0/activation/Relu
+/trunk_output/block4/block4-0/f/c/c.0/Conv + /trunk_output/block4/block4-0/Add + /trunk_output/block4/block4-0/activation/Relu
+Reformatting CopyNode for Input Tensor 0 to /avgpool/GlobalAveragePool
+/avgpool/GlobalAveragePool
+Reformatting CopyNode for Input Tensor 0 to /fc/Gemm
+/fc/Gemm
+reshape_after_/fc/Gemm
+
+Bindings:
+x
+730
+[05/01/2024-14:16:57] [I] Starting inference
+[05/01/2024-14:17:00] [I] Warmup completed 38 queries over 200 ms
+[05/01/2024-14:17:00] [I] Timing trace has 565 queries over 3.01254 s
+[05/01/2024-14:17:00] [I] 
+[05/01/2024-14:17:00] [I] === Trace details ===
+[05/01/2024-14:17:00] [I] Trace averages of 10 runs:
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.30442 ms - Host latency: 5.3817 ms (enqueue 1.68154 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31845 ms - Host latency: 5.39871 ms (enqueue 1.70564 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.30443 ms - Host latency: 5.38555 ms (enqueue 1.72284 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31979 ms - Host latency: 5.40249 ms (enqueue 1.72522 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31169 ms - Host latency: 5.39384 ms (enqueue 1.73656 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31793 ms - Host latency: 5.40063 ms (enqueue 1.74195 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.30729 ms - Host latency: 5.39047 ms (enqueue 1.73613 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.30196 ms - Host latency: 5.38124 ms (enqueue 1.68392 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31682 ms - Host latency: 5.396 ms (enqueue 1.70568 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32626 ms - Host latency: 5.40903 ms (enqueue 1.73252 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.33697 ms - Host latency: 5.42017 ms (enqueue 1.73031 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31087 ms - Host latency: 5.39377 ms (enqueue 1.7315 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31597 ms - Host latency: 5.39411 ms (enqueue 1.7022 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31291 ms - Host latency: 5.39568 ms (enqueue 1.73658 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31293 ms - Host latency: 5.39708 ms (enqueue 1.73781 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31619 ms - Host latency: 5.39791 ms (enqueue 1.73724 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32113 ms - Host latency: 5.40444 ms (enqueue 1.73217 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31672 ms - Host latency: 5.39646 ms (enqueue 1.70693 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.30809 ms - Host latency: 5.38536 ms (enqueue 1.68146 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32755 ms - Host latency: 5.41187 ms (enqueue 1.73318 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32755 ms - Host latency: 5.4098 ms (enqueue 1.72927 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.34239 ms - Host latency: 5.42523 ms (enqueue 1.72942 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32062 ms - Host latency: 5.40031 ms (enqueue 1.71122 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31638 ms - Host latency: 5.39912 ms (enqueue 1.72998 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.34467 ms - Host latency: 5.42747 ms (enqueue 1.72944 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.3374 ms - Host latency: 5.42009 ms (enqueue 1.73296 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31191 ms - Host latency: 5.39437 ms (enqueue 1.7052 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.29836 ms - Host latency: 5.37767 ms (enqueue 1.69656 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.30442 ms - Host latency: 5.38802 ms (enqueue 1.73011 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32692 ms - Host latency: 5.40935 ms (enqueue 1.67314 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.33135 ms - Host latency: 5.4149 ms (enqueue 1.71062 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31979 ms - Host latency: 5.40231 ms (enqueue 1.73696 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.30269 ms - Host latency: 5.38149 ms (enqueue 1.69958 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.3152 ms - Host latency: 5.39353 ms (enqueue 1.69338 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32787 ms - Host latency: 5.40493 ms (enqueue 1.68195 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.33381 ms - Host latency: 5.41636 ms (enqueue 1.73367 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32717 ms - Host latency: 5.40764 ms (enqueue 1.70823 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32307 ms - Host latency: 5.40254 ms (enqueue 1.7073 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.33567 ms - Host latency: 5.41797 ms (enqueue 1.73362 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.33313 ms - Host latency: 5.41572 ms (enqueue 1.72986 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.3261 ms - Host latency: 5.40903 ms (enqueue 1.73191 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.33494 ms - Host latency: 5.41765 ms (enqueue 1.73286 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.33206 ms - Host latency: 5.41445 ms (enqueue 1.72915 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.33054 ms - Host latency: 5.4082 ms (enqueue 1.68098 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.33604 ms - Host latency: 5.41855 ms (enqueue 1.73357 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32583 ms - Host latency: 5.40571 ms (enqueue 1.70369 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31826 ms - Host latency: 5.39829 ms (enqueue 1.7085 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.30808 ms - Host latency: 5.38726 ms (enqueue 2.19724 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32039 ms - Host latency: 5.40208 ms (enqueue 1.7707 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31177 ms - Host latency: 5.39514 ms (enqueue 1.73679 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.30903 ms - Host latency: 5.39172 ms (enqueue 1.74004 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32559 ms - Host latency: 5.4085 ms (enqueue 1.73362 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.32964 ms - Host latency: 5.41233 ms (enqueue 1.73125 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.30664 ms - Host latency: 5.38677 ms (enqueue 1.70518 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.30317 ms - Host latency: 5.37747 ms (enqueue 1.66174 ms)
+[05/01/2024-14:17:00] [I] Average on 10 runs - GPU latency: 5.31201 ms - Host latency: 5.395 ms (enqueue 1.73098 ms)
+[05/01/2024-14:17:00] [I] 
+[05/01/2024-14:17:00] [I] === Performance summary ===
+[05/01/2024-14:17:00] [I] Throughput: 187.55 qps
+[05/01/2024-14:17:00] [I] Latency: min = 5.3573 ms, max = 5.49658 ms, mean = 5.40152 ms, median = 5.38464 ms, percentile(90%) = 5.44885 ms, percentile(95%) = 5.45239 ms, percentile(99%) = 5.46265 ms
+[05/01/2024-14:17:00] [I] Enqueue Time: min = 1.56909 ms, max = 6.70605 ms, mean = 1.7274 ms, median = 1.72229 ms, percentile(90%) = 1.75208 ms, percentile(95%) = 1.75488 ms, percentile(99%) = 1.7735 ms
+[05/01/2024-14:17:00] [I] H2D Latency: min = 0.0613098 ms, max = 0.101685 ms, mean = 0.0755579 ms, median = 0.0768738 ms, percentile(90%) = 0.0776367 ms, percentile(95%) = 0.0778198 ms, percentile(99%) = 0.0836182 ms
+[05/01/2024-14:17:00] [I] GPU Compute Time: min = 5.28809 ms, max = 5.40869 ms, mean = 5.32017 ms, median = 5.30225 ms, percentile(90%) = 5.36768 ms, percentile(95%) = 5.37085 ms, percentile(99%) = 5.3811 ms
+[05/01/2024-14:17:00] [I] D2H Latency: min = 0.00439453 ms, max = 0.0100098 ms, mean = 0.00580336 ms, median = 0.00567627 ms, percentile(90%) = 0.00732422 ms, percentile(95%) = 0.00756836 ms, percentile(99%) = 0.0078125 ms
+[05/01/2024-14:17:00] [I] Total Host Walltime: 3.01254 s
+[05/01/2024-14:17:00] [I] Total GPU Compute Time: 3.00589 s
+[05/01/2024-14:17:00] [I] Explanations of the performance metrics are printed in the verbose logs.
+[05/01/2024-14:17:00] [I] 
+&&&& PASSED TensorRT.trtexec [TensorRT v8601] # /usr/local/TensorRT-8.6.1.6/bin/trtexec --onnx=./regnet_y_16gf_Opset16.onnx --saveEngine=./regnet.engine --dumpLayerInfo

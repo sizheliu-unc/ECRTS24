@@ -1,10 +1,14 @@
 # ECRTS24
-Supplemental material for ECRTS24 paper: Autonomy Today: Many Delay-Prone Black Boxes.
+Supplemental material for ECRTS 2024 paper, *Autonomy Today: Many Delay-Prone Black Boxes*.
 
 The supplemental material contains:
 - README.md (current file)
+- artifact
 - glibc-2.38-phase-fair-boosting.patch
 - cuda_lock_stats
+
+## artifact
+The *artifact* from this paper is located at the `artifact` folder, with a README.md for instructions. Note that the *artifact* located in this git repository may be subjected to changes by the authors for improvement. The artifact endorsed by the Artifact Evaluation Committee is available free of charge on the Dagstuhl Research Online Publication Server (DROPS).
 
 ## glibc RW lock phase-fair + priority boosting patch
 The file glibc-2.38-phase-fair-boosting.patch can be applied to glibc-2.38 using

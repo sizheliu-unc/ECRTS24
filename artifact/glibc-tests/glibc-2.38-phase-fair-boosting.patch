@@ -1,0 +1,285 @@
+diff --git a/nptl/pthread_rwlock_common.c b/nptl/pthread_rwlock_common.c
+index 5266a00ed1..e4fc43ae1b 100644
+--- a/nptl/pthread_rwlock_common.c
++++ b/nptl/pthread_rwlock_common.c
+@@ -274,6 +274,11 @@ __pthread_rwlock_rdunlock (pthread_rwlock_t *rwlock)
+   /* Also wake up waiting readers if we did reset the RWAITING flag.  */
+   if ((r & PTHREAD_RWLOCK_RWAITING) != (rnew & PTHREAD_RWLOCK_RWAITING))
+     futex_wake (&rwlock->__data.__readers, INT_MAX, private);
++  
++  /* Restore to previous priority.*/
++  __pthread_tpp_change_priority (99, -1);
++
++
+ }
+ 
+ 
+@@ -299,7 +304,12 @@ __pthread_rwlock_rdlock_full64 (pthread_rwlock_t *rwlock, clockid_t clockid,
+ 			== THREAD_GETMEM (THREAD_SELF, tid)))
+     return EDEADLK;
+ 
+-  /* If we prefer writers, recursive rdlock is disallowed, we are in a read
++  /* Boost priority to highest program. */
++  int ret = __pthread_tpp_change_priority (-1, 99);
++  if (ret) return ret;
++
++
++  /* We always prefer writers in a read phase,  then if we are in a read
+      phase, and there are other readers present, we try to wait without
+      extending the read phase.  We will be unblocked by either one of the
+      other active readers, or if the writer gives up WRLOCKED (e.g., on
+@@ -307,12 +317,10 @@ __pthread_rwlock_rdlock_full64 (pthread_rwlock_t *rwlock, clockid_t clockid,
+      If there are no other readers, we simply race with any existing primary
+      writer; it would have been a race anyway, and changing the odds slightly
+      will likely not make a big difference.  */
+-  if (rwlock->__data.__flags == PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP)
+-    {
+-      r = atomic_load_relaxed (&rwlock->__data.__readers);
+-      while ((r & PTHREAD_RWLOCK_WRPHASE) == 0
+-	     && (r & PTHREAD_RWLOCK_WRLOCKED) != 0
+-	     && (r >> PTHREAD_RWLOCK_READER_SHIFT) > 0)
++	r = atomic_load_relaxed (&rwlock->__data.__readers);
++	while ((r & PTHREAD_RWLOCK_WRPHASE) == 0
++		&& (r & PTHREAD_RWLOCK_WRLOCKED) != 0
++		&& (r >> PTHREAD_RWLOCK_READER_SHIFT) > 0)
+ 	{
+ 	  /* TODO Spin first.  */
+ 	  /* Try setting the flag signaling that we are waiting without having
+@@ -345,7 +353,6 @@ __pthread_rwlock_rdlock_full64 (pthread_rwlock_t *rwlock, clockid_t clockid,
+ 	      /* TODO Back-off.  */
+ 	    }
+ 	}
+-    }
+   /* Register as a reader, using an add-and-fetch so that R can be used as
+      expected value for future operations.  Acquire MO so we synchronize with
+      prior writers as well as the last reader of the previous read phase (see
+@@ -535,23 +542,6 @@ __pthread_rwlock_wrunlock (pthread_rwlock_t *rwlock)
+     = ((atomic_exchange_relaxed (&rwlock->__data.__writers_futex, 0)
+ 	& PTHREAD_RWLOCK_FUTEX_USED) != 0);
+ 
+-  if (rwlock->__data.__flags != PTHREAD_RWLOCK_PREFER_READER_NP)
+-    {
+-      /* First, try to hand over to another writer.  */
+-      unsigned int w = atomic_load_relaxed (&rwlock->__data.__writers);
+-      while (w != 0)
+-	{
+-	  /* Release MO so that another writer that gets WRLOCKED from us will
+-	     synchronize with us and thus can take over our view of
+-	     __readers (including, for example, whether we are in a write
+-	     phase or not).  */
+-	  if (atomic_compare_exchange_weak_release
+-	      (&rwlock->__data.__writers, &w, w | PTHREAD_RWLOCK_WRHANDOVER))
+-	    /* Another writer will take over.  */
+-	    goto done;
+-	  /* TODO Back-off.  */
+-	}
+-    }
+ 
+   /* We have done everything we needed to do to prefer writers, so now we
+      either hand over explicitly to readers if there are any, or we simply
+@@ -577,10 +567,13 @@ __pthread_rwlock_wrunlock (pthread_rwlock_t *rwlock)
+ 	futex_wake (&rwlock->__data.__wrphase_futex, INT_MAX, private);
+     }
+ 
+- done:
+-  /* We released WRLOCKED in some way, so wake a writer.  */
++   /* We released WRLOCKED in some way, so wake a writer.  */
+   if (wake_writers)
+     futex_wake (&rwlock->__data.__writers_futex, 1, private);
++
++  /* Restore previous priority.*/
++  __pthread_tpp_change_priority (99, -1);
++
+ }
+ 
+ 
+@@ -604,6 +597,10 @@ __pthread_rwlock_wrlock_full64 (pthread_rwlock_t *rwlock, clockid_t clockid,
+ 			== THREAD_GETMEM (THREAD_SELF, tid)))
+     return EDEADLK;
+ 
++  /* Boost priority to the highest. */
++  int ret = __pthread_tpp_change_priority (-1, 99);
++  if (ret) return ret;
++
+   /* First we try to acquire the role of primary writer by setting WRLOCKED;
+      if it was set before, there already is a primary writer.  Acquire MO so
+      that we synchronize with previous primary writers.
+@@ -624,16 +621,6 @@ __pthread_rwlock_wrlock_full64 (pthread_rwlock_t *rwlock, clockid_t clockid,
+   if (__glibc_unlikely ((r & PTHREAD_RWLOCK_WRLOCKED) != 0))
+     {
+       /* There is another primary writer.  */
+-      bool prefer_writer
+-	= (rwlock->__data.__flags != PTHREAD_RWLOCK_PREFER_READER_NP);
+-      if (prefer_writer)
+-	{
+-	  /* We register as a waiting writer, so that we can make use of
+-	     writer--writer hand-over.  Relaxed MO is fine because we just
+-	     want to register.  We assume that the maximum number of threads
+-	     is less than the capacity in __writers.  */
+-	  atomic_fetch_add_relaxed (&rwlock->__data.__writers, 1);
+-	}
+       for (;;)
+ 	{
+ 	  /* TODO Spin until WRLOCKED is 0 before trying the CAS below.
+@@ -646,21 +633,6 @@ __pthread_rwlock_wrlock_full64 (pthread_rwlock_t *rwlock, clockid_t clockid,
+ 	      if (atomic_compare_exchange_weak_acquire
+ 		  (&rwlock->__data.__readers, &r, r | PTHREAD_RWLOCK_WRLOCKED))
+ 		{
+-		  if (prefer_writer)
+-		    {
+-		      /* Unregister as a waiting writer.  Note that because we
+-			 acquired WRLOCKED, WRHANDOVER will not be set.
+-			 Acquire MO on the CAS above ensures that
+-			 unregistering happens after the previous writer;
+-			 this sorts the accesses to __writers by all
+-			 primary writers in a useful way (e.g., any other
+-			 primary writer acquiring after us or getting it from
+-			 us through WRHANDOVER will see both our changes to
+-			 __writers).
+-			 ??? Perhaps this is not strictly necessary for
+-			 reasons we do not yet know of.  */
+-		      atomic_fetch_add_relaxed (&rwlock->__data.__writers, -1);
+-		    }
+ 		  break;
+ 		}
+ 	      /* Retry if the CAS fails (r will have been updated).  */
+@@ -669,35 +641,6 @@ __pthread_rwlock_wrlock_full64 (pthread_rwlock_t *rwlock, clockid_t clockid,
+ 	  /* If writer--writer hand-over is available, try to become the
+ 	     primary writer this way by grabbing the WRHANDOVER token.  If we
+ 	     succeed, we own WRLOCKED.  */
+-	  if (prefer_writer)
+-	    {
+-	      unsigned int w = atomic_load_relaxed (&rwlock->__data.__writers);
+-	      if ((w & PTHREAD_RWLOCK_WRHANDOVER) != 0)
+-		{
+-		  /* Acquire MO is required here so that we synchronize with
+-		     the writer that handed over WRLOCKED.  We also need this
+-		     for the reload of __readers below because our view of
+-		     __readers must be at least as recent as the view of the
+-		     writer that handed over WRLOCKED; we must avoid an ABA
+-		     through WRHANDOVER, which could, for example, lead to us
+-		     assuming we are still in a write phase when in fact we
+-		     are not.  */
+-		  if (atomic_compare_exchange_weak_acquire
+-		      (&rwlock->__data.__writers,
+-		       &w, (w - PTHREAD_RWLOCK_WRHANDOVER - 1)))
+-		    {
+-		      /* Reload so our view is consistent with the view of
+-			 the previous owner of WRLOCKED.  See above.  */
+-		      r = atomic_load_relaxed (&rwlock->__data.__readers);
+-		      break;
+-		    }
+-		  /* We do not need to reload __readers here.  We should try
+-		     to perform writer--writer hand-over if possible; if it
+-		     is not possible anymore, we will reload __readers
+-		     elsewhere in this loop.  */
+-		  continue;
+-		}
+-	    }
+ 	  /* We did not acquire WRLOCKED nor were able to use writer--writer
+ 	     hand-over, so we block on __writers_futex.  */
+ 	  int private = __pthread_rwlock_get_private (rwlock);
+@@ -732,30 +675,6 @@ __pthread_rwlock_wrlock_full64 (pthread_rwlock_t *rwlock, clockid_t clockid,
+ 					     clockid, abstime, private);
+ 	  if (err == ETIMEDOUT || err == EOVERFLOW)
+ 	    {
+-	      if (prefer_writer)
+-		{
+-		  /* We need to unregister as a waiting writer.  If we are the
+-		     last writer and writer--writer hand-over is available,
+-		     we must make use of it because nobody else will reset
+-		     WRLOCKED otherwise.  (If we use it, we simply pretend
+-		     that this happened before the timeout; see
+-		     pthread_rwlock_rdlock_full for the full reasoning.)
+-		     Also see the similar code above.  */
+-		  unsigned int w
+-		    = atomic_load_relaxed (&rwlock->__data.__writers);
+-		  while (!atomic_compare_exchange_weak_acquire
+-			 (&rwlock->__data.__writers, &w,
+-			  (w == PTHREAD_RWLOCK_WRHANDOVER + 1 ? 0 : w - 1)))
+-		    {
+-		      /* TODO Back-off.  */
+-		    }
+-		  if (w == PTHREAD_RWLOCK_WRHANDOVER + 1)
+-		    {
+-		      /* We must continue as primary writer.  See above.  */
+-		      r = atomic_load_relaxed (&rwlock->__data.__readers);
+-		      break;
+-		    }
+-		}
+ 	      /* We cleaned up and cannot have stolen another waiting writer's
+ 		 futex wake-up, so just return.  */
+ 	      return err;
+@@ -831,48 +750,6 @@ __pthread_rwlock_wrlock_full64 (pthread_rwlock_t *rwlock, clockid_t clockid,
+ 					     clockid, abstime, private);
+ 	  if (err == ETIMEDOUT || err == EOVERFLOW)
+ 	    {
+-	      if (rwlock->__data.__flags != PTHREAD_RWLOCK_PREFER_READER_NP)
+-		{
+-		  /* We try writer--writer hand-over.  */
+-		  unsigned int w
+-		    = atomic_load_relaxed (&rwlock->__data.__writers);
+-		  if (w != 0)
+-		    {
+-		      /* We are about to hand over WRLOCKED, so we must
+-			 release __writers_futex too; otherwise, we'd have
+-			 a pending store, which could at least prevent
+-			 other threads from waiting using the futex
+-			 because it could interleave with the stores
+-			 by subsequent writers.  In turn, this means that
+-			 we have to clean up when we do not hand over
+-			 WRLOCKED.
+-			 Release MO so that another writer that gets
+-			 WRLOCKED from us can take over our view of
+-			 __readers.  */
+-		      unsigned int wf
+-			= atomic_exchange_relaxed (&rwlock->__data.__writers_futex, 0);
+-		      while (w != 0)
+-			{
+-			  if (atomic_compare_exchange_weak_release
+-			      (&rwlock->__data.__writers, &w,
+-			       w | PTHREAD_RWLOCK_WRHANDOVER))
+-			    {
+-			      /* Wake other writers.  */
+-			      if ((wf & PTHREAD_RWLOCK_FUTEX_USED) != 0)
+-				futex_wake (&rwlock->__data.__writers_futex,
+-					    1, private);
+-			      return err;
+-			    }
+-			  /* TODO Back-off.  */
+-			}
+-		      /* We still own WRLOCKED and someone else might set
+-			 a write phase concurrently, so enable waiting
+-			 again.  Make sure we don't loose the flag that
+-			 signals whether there are threads waiting on
+-			 this futex.  */
+-		      atomic_store_relaxed (&rwlock->__data.__writers_futex, wf);
+-		    }
+-		}
+ 	      /* If we timed out and we are not in a write phase, we can
+ 		 just stop being a primary writer.  Otherwise, we just
+ 		 acquire the lock.  */
+@@ -936,8 +813,7 @@ __pthread_rwlock_wrlock_full64 (pthread_rwlock_t *rwlock, clockid_t clockid,
+ 	     the expected value (EAGAIN), retry.  */
+ 	}
+       /* See pthread_rwlock_rdlock_full.  */
+-      if (ready)
+-	break;
++      if (ready) break;
+       if ((atomic_load_acquire (&rwlock->__data.__readers)
+ 	   & PTHREAD_RWLOCK_WRPHASE) != 0)
+ 	ready = true;
+diff --git a/nptl/pthread_rwlock_init.c b/nptl/pthread_rwlock_init.c
+index 58d29cc4a5..0e1dc06857 100644
+--- a/nptl/pthread_rwlock_init.c
++++ b/nptl/pthread_rwlock_init.c
+@@ -41,6 +41,9 @@ ___pthread_rwlock_init (pthread_rwlock_t *rwlock,
+   ASSERT_PTHREAD_INTERNAL_MEMBER_SIZE (pthread_rwlock_t, __data.__flags,
+ 				       int);
+ 
++  if (atomic_load_relaxed (&__sched_fifo_min_prio) == -1)
++    __init_sched_fifo_prio ();
++
+   const struct pthread_rwlockattr *iattr;
+ 
+   iattr = ((const struct pthread_rwlockattr *) attr) ?: &default_rwlockattr;

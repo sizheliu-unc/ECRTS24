@@ -1,0 +1,1 @@
+/usr/local/cuda-12.2.2/bin/nvcc    -Xcompiler=-fPIC -Wno-deprecated-gpu-targets -shared -dlink CMakeFiles/infer.dir/src/infer.cu.o -o CMakeFiles/infer.dir/cmake_device_link.o  -L/usr/local/cuda-12.2.2/targets/x86_64-linux/lib/stubs  -L/usr/local/cuda-12.2.2/targets/x86_64-linux/lib 

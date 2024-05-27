@@ -1,0 +1,308 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v8601] # /usr/local/TensorRT-8.6.1.6/bin/trtexec --onnx=./detr.onnx --saveEngine=./detr.engine --dumpLayerInfo
+[05/01/2024-15:37:44] [I] === Model Options ===
+[05/01/2024-15:37:44] [I] Format: ONNX
+[05/01/2024-15:37:44] [I] Model: ./detr.onnx
+[05/01/2024-15:37:44] [I] Output:
+[05/01/2024-15:37:44] [I] === Build Options ===
+[05/01/2024-15:37:44] [I] Max batch: explicit batch
+[05/01/2024-15:37:44] [I] Memory Pools: workspace: default, dlaSRAM: default, dlaLocalDRAM: default, dlaGlobalDRAM: default
+[05/01/2024-15:37:44] [I] minTiming: 1
+[05/01/2024-15:37:44] [I] avgTiming: 8
+[05/01/2024-15:37:44] [I] Precision: FP32
+[05/01/2024-15:37:44] [I] LayerPrecisions: 
+[05/01/2024-15:37:44] [I] Layer Device Types: 
+[05/01/2024-15:37:44] [I] Calibration: 
+[05/01/2024-15:37:44] [I] Refit: Disabled
+[05/01/2024-15:37:44] [I] Version Compatible: Disabled
+[05/01/2024-15:37:44] [I] TensorRT runtime: full
+[05/01/2024-15:37:44] [I] Lean DLL Path: 
+[05/01/2024-15:37:44] [I] Tempfile Controls: { in_memory: allow, temporary: allow }
+[05/01/2024-15:37:44] [I] Exclude Lean Runtime: Disabled
+[05/01/2024-15:37:44] [I] Sparsity: Disabled
+[05/01/2024-15:37:44] [I] Safe mode: Disabled
+[05/01/2024-15:37:44] [I] Build DLA standalone loadable: Disabled
+[05/01/2024-15:37:44] [I] Allow GPU fallback for DLA: Disabled
+[05/01/2024-15:37:44] [I] DirectIO mode: Disabled
+[05/01/2024-15:37:44] [I] Restricted mode: Disabled
+[05/01/2024-15:37:44] [I] Skip inference: Disabled
+[05/01/2024-15:37:44] [I] Save engine: ./detr.engine
+[05/01/2024-15:37:44] [I] Load engine: 
+[05/01/2024-15:37:44] [I] Profiling verbosity: 0
+[05/01/2024-15:37:44] [I] Tactic sources: Using default tactic sources
+[05/01/2024-15:37:44] [I] timingCacheMode: local
+[05/01/2024-15:37:44] [I] timingCacheFile: 
+[05/01/2024-15:37:44] [I] Heuristic: Disabled
+[05/01/2024-15:37:44] [I] Preview Features: Use default preview flags.
+[05/01/2024-15:37:44] [I] MaxAuxStreams: -1
+[05/01/2024-15:37:44] [I] BuilderOptimizationLevel: -1
+[05/01/2024-15:37:44] [I] Input(s)s format: fp32:CHW
+[05/01/2024-15:37:44] [I] Output(s)s format: fp32:CHW
+[05/01/2024-15:37:44] [I] Input build shapes: model
+[05/01/2024-15:37:44] [I] Input calibration shapes: model
+[05/01/2024-15:37:44] [I] === System Options ===
+[05/01/2024-15:37:44] [I] Device: 0
+[05/01/2024-15:37:44] [I] DLACore: 
+[05/01/2024-15:37:44] [I] Plugins:
+[05/01/2024-15:37:44] [I] setPluginsToSerialize:
+[05/01/2024-15:37:44] [I] dynamicPlugins:
+[05/01/2024-15:37:44] [I] ignoreParsedPluginLibs: 0
+[05/01/2024-15:37:44] [I] 
+[05/01/2024-15:37:44] [I] === Inference Options ===
+[05/01/2024-15:37:44] [I] Batch: Explicit
+[05/01/2024-15:37:44] [I] Input inference shapes: model
+[05/01/2024-15:37:44] [I] Iterations: 10
+[05/01/2024-15:37:44] [I] Duration: 3s (+ 200ms warm up)
+[05/01/2024-15:37:44] [I] Sleep time: 0ms
+[05/01/2024-15:37:44] [I] Idle time: 0ms
+[05/01/2024-15:37:44] [I] Inference Streams: 1
+[05/01/2024-15:37:44] [I] ExposeDMA: Disabled
+[05/01/2024-15:37:44] [I] Data transfers: Enabled
+[05/01/2024-15:37:44] [I] Spin-wait: Disabled
+[05/01/2024-15:37:44] [I] Multithreading: Disabled
+[05/01/2024-15:37:44] [I] CUDA Graph: Disabled
+[05/01/2024-15:37:44] [I] Separate profiling: Disabled
+[05/01/2024-15:37:44] [I] Time Deserialize: Disabled
+[05/01/2024-15:37:44] [I] Time Refit: Disabled
+[05/01/2024-15:37:44] [I] NVTX verbosity: 0
+[05/01/2024-15:37:44] [I] Persistent Cache Ratio: 0
+[05/01/2024-15:37:44] [I] Inputs:
+[05/01/2024-15:37:44] [I] === Reporting Options ===
+[05/01/2024-15:37:44] [I] Verbose: Disabled
+[05/01/2024-15:37:44] [I] Averages: 10 inferences
+[05/01/2024-15:37:44] [I] Percentiles: 90,95,99
+[05/01/2024-15:37:44] [I] Dump refittable layers:Disabled
+[05/01/2024-15:37:44] [I] Dump output: Disabled
+[05/01/2024-15:37:44] [I] Profile: Disabled
+[05/01/2024-15:37:44] [I] Export timing to JSON file: 
+[05/01/2024-15:37:44] [I] Export output to JSON file: 
+[05/01/2024-15:37:44] [I] Export profile to JSON file: 
+[05/01/2024-15:37:44] [I] 
+[05/01/2024-15:37:46] [I] === Device Information ===
+[05/01/2024-15:37:46] [I] Selected Device: NVIDIA TITAN V
+[05/01/2024-15:37:46] [I] Compute Capability: 7.0
+[05/01/2024-15:37:46] [I] SMs: 80
+[05/01/2024-15:37:46] [I] Device Global Memory: 12042 MiB
+[05/01/2024-15:37:46] [I] Shared Memory per SM: 96 KiB
+[05/01/2024-15:37:46] [I] Memory Bus Width: 3072 bits (ECC disabled)
+[05/01/2024-15:37:46] [I] Application Compute Clock Rate: 1.455 GHz
+[05/01/2024-15:37:46] [I] Application Memory Clock Rate: 0.85 GHz
+[05/01/2024-15:37:46] [I] 
+[05/01/2024-15:37:46] [I] Note: The application clock rates do not reflect the actual clock rates that the GPU is currently running at.
+[05/01/2024-15:37:46] [I] 
+[05/01/2024-15:37:46] [I] TensorRT version: 8.6.1
+[05/01/2024-15:37:46] [I] Loading standard plugins
+[05/01/2024-15:37:46] [I] [TRT] [MemUsageChange] Init CUDA: CPU +17, GPU +0, now: CPU 23, GPU 309 (MiB)
+[05/01/2024-15:37:56] [I] [TRT] [MemUsageChange] Init builder kernel library: CPU +431, GPU +74, now: CPU 530, GPU 383 (MiB)
+[05/01/2024-15:37:56] [I] Start parsing network model.
+[05/01/2024-15:37:56] [I] [TRT] ----------------------------------------------------------------
+[05/01/2024-15:37:56] [I] [TRT] Input filename:   ./detr.onnx
+[05/01/2024-15:37:56] [I] [TRT] ONNX IR version:  0.0.8
+[05/01/2024-15:37:56] [I] [TRT] Opset version:    17
+[05/01/2024-15:37:56] [I] [TRT] Producer name:    pytorch
+[05/01/2024-15:37:56] [I] [TRT] Producer version: 2.1.0
+[05/01/2024-15:37:56] [I] [TRT] Domain:           
+[05/01/2024-15:37:56] [I] [TRT] Model version:    0
+[05/01/2024-15:37:56] [I] [TRT] Doc string:       
+[05/01/2024-15:37:56] [I] [TRT] ----------------------------------------------------------------
+[05/01/2024-15:37:56] [W] [TRT] onnx2trt_utils.cpp:374: Your ONNX model has been generated with INT64 weights, while TensorRT does not natively support INT64. Attempting to cast down to INT32.
+[05/01/2024-15:37:56] [W] [TRT] onnx2trt_utils.cpp:400: One or more weights outside the range of INT32 was clamped
+[05/01/2024-15:37:56] [I] Finished parsing network model. Parse time: 0.697248
+[05/01/2024-15:37:56] [I] [TRT] BuilderFlag::kTF32 is set but hardware does not support TF32. Disabling TF32.
+[05/01/2024-15:37:57] [I] [TRT] Graph optimization time: 0.490352 seconds.
+[05/01/2024-15:37:57] [I] [TRT] BuilderFlag::kTF32 is set but hardware does not support TF32. Disabling TF32.
+[05/01/2024-15:37:57] [I] [TRT] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[05/01/2024-15:39:14] [I] [TRT] Detected 1 inputs and 2 output network tensors.
+[05/01/2024-15:39:14] [I] [TRT] Total Host Persistent Memory: 231136
+[05/01/2024-15:39:14] [I] [TRT] Total Device Persistent Memory: 1321984
+[05/01/2024-15:39:14] [I] [TRT] Total Scratch Memory: 14166016
+[05/01/2024-15:39:14] [I] [TRT] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 114 MiB, GPU 120 MiB
+[05/01/2024-15:39:14] [I] [TRT] [BlockAssignment] Started assigning block shifts. This will take 126 steps to complete.
+[05/01/2024-15:39:14] [I] [TRT] [BlockAssignment] Algorithm ShiftNTopDown took 12.2949ms to assign 11 blocks to 126 nodes requiring 43255296 bytes.
+[05/01/2024-15:39:14] [I] [TRT] Total Activation Memory: 43254272
+[05/01/2024-15:39:15] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in building engine: CPU +89, GPU +185, now: CPU 89, GPU 185 (MiB)
+[05/01/2024-15:39:15] [I] Engine built in 89.4751 sec.
+[05/01/2024-15:39:15] [I] [TRT] Loaded engine size: 185 MiB
+[05/01/2024-15:39:16] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +184, now: CPU 0, GPU 184 (MiB)
+[05/01/2024-15:39:16] [I] Engine deserialized in 0.111916 sec.
+[05/01/2024-15:39:16] [I] [TRT] [MS] Running engine with multi stream info
+[05/01/2024-15:39:16] [I] [TRT] [MS] Number of aux streams is 2
+[05/01/2024-15:39:16] [I] [TRT] [MS] Number of total worker streams is 3
+[05/01/2024-15:39:16] [I] [TRT] [MS] The main stream provided by execute/enqueue calls is the first worker stream
+[05/01/2024-15:39:16] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +43, now: CPU 0, GPU 227 (MiB)
+[05/01/2024-15:39:16] [I] Setting persistentCacheLimit to 0 bytes.
+[05/01/2024-15:39:16] [I] Using random values for input samples
+[05/01/2024-15:39:16] [I] Input binding for samples with dimensions 1x3x512x512 is created.
+[05/01/2024-15:39:16] [I] Output binding for 4616 with dimensions 1x100x92 is created.
+[05/01/2024-15:39:16] [I] Output binding for 4617 with dimensions 1x100x4 is created.
+[05/01/2024-15:39:16] [I] Layer Information:
+[05/01/2024-15:39:16] [I] [TRT] The profiling verbosity was set to ProfilingVerbosity::kLAYER_NAMES_ONLY when the engine was built, so only the layer names will be returned. Rebuild the engine with ProfilingVerbosity::kDETAILED to get more verbose layer information.
+[05/01/2024-15:39:16] [I] Layers:
+/Constant_23_output_0
+/Constant_36_output_0
+/Pad_1
+{ForeignNode[/Cast_7.../backbone/backbone.0/Cast]}
+/backbone/backbone.0/Resize
+{ForeignNode[/backbone/backbone.0/Cast_2.../backbone/backbone.1/Slice_2]}
+samples copy
+/backbone/backbone.0/body/conv1/Conv + onnx::Mul_4637 + /backbone/backbone.0/body/bn1/Mul + onnx::Add_4639 + /backbone/backbone.0/body/bn1/Add + /backbone/backbone.0/body/relu/Relu
+/backbone/backbone.0/body/maxpool/MaxPool
+/backbone/backbone.0/body/layer1/layer1.0/conv1/Conv + onnx::Mul_4647 + /backbone/backbone.0/body/layer1/layer1.0/bn1/Mul + onnx::Add_4649 + /backbone/backbone.0/body/layer1/layer1.0/bn1/Add + /backbone/backbone.0/body/layer1/layer1.0/relu/Relu
+/backbone/backbone.0/body/layer1/layer1.0/conv2/Conv + onnx::Mul_4657 + /backbone/backbone.0/body/layer1/layer1.0/bn2/Mul + onnx::Add_4659 + /backbone/backbone.0/body/layer1/layer1.0/bn2/Add + /backbone/backbone.0/body/layer1/layer1.0/relu_1/Relu
+/backbone/backbone.0/body/layer1/layer1.0/conv3/Conv + onnx::Mul_4667 + /backbone/backbone.0/body/layer1/layer1.0/bn3/Mul + onnx::Add_4669 + /backbone/backbone.0/body/layer1/layer1.0/bn3/Add
+/backbone/backbone.0/body/layer1/layer1.0/downsample/downsample.0/Conv + onnx::Mul_4677 + /backbone/backbone.0/body/layer1/layer1.0/downsample/downsample.1/Mul + onnx::Add_4679 + /backbone/backbone.0/body/layer1/layer1.0/downsample/downsample.1/Add + /backbone/backbone.0/body/layer1/layer1.0/Add + /backbone/backbone.0/body/layer1/layer1.0/relu_2/Relu
+/backbone/backbone.0/body/layer1/layer1.1/conv1/Conv + onnx::Mul_4687 + /backbone/backbone.0/body/layer1/layer1.1/bn1/Mul + onnx::Add_4689 + /backbone/backbone.0/body/layer1/layer1.1/bn1/Add + /backbone/backbone.0/body/layer1/layer1.1/relu/Relu
+/backbone/backbone.0/body/layer1/layer1.1/conv2/Conv + onnx::Mul_4697 + /backbone/backbone.0/body/layer1/layer1.1/bn2/Mul + onnx::Add_4699 + /backbone/backbone.0/body/layer1/layer1.1/bn2/Add + /backbone/backbone.0/body/layer1/layer1.1/relu_1/Relu
+/backbone/backbone.0/body/layer1/layer1.1/conv3/Conv + onnx::Mul_4707 + /backbone/backbone.0/body/layer1/layer1.1/bn3/Mul + onnx::Add_4709 + /backbone/backbone.0/body/layer1/layer1.1/bn3/Add + /backbone/backbone.0/body/layer1/layer1.1/Add + /backbone/backbone.0/body/layer1/layer1.1/relu_2/Relu
+/backbone/backbone.0/body/layer1/layer1.2/conv1/Conv + onnx::Mul_4717 + /backbone/backbone.0/body/layer1/layer1.2/bn1/Mul + onnx::Add_4719 + /backbone/backbone.0/body/layer1/layer1.2/bn1/Add + /backbone/backbone.0/body/layer1/layer1.2/relu/Relu
+/backbone/backbone.0/body/layer1/layer1.2/conv2/Conv + onnx::Mul_4727 + /backbone/backbone.0/body/layer1/layer1.2/bn2/Mul + onnx::Add_4729 + /backbone/backbone.0/body/layer1/layer1.2/bn2/Add + /backbone/backbone.0/body/layer1/layer1.2/relu_1/Relu
+/backbone/backbone.0/body/layer1/layer1.2/conv3/Conv + onnx::Mul_4737 + /backbone/backbone.0/body/layer1/layer1.2/bn3/Mul + onnx::Add_4739 + /backbone/backbone.0/body/layer1/layer1.2/bn3/Add + /backbone/backbone.0/body/layer1/layer1.2/Add + /backbone/backbone.0/body/layer1/layer1.2/relu_2/Relu
+Reformatting CopyNode for Output Tensor 0 to /backbone/backbone.0/body/layer1/layer1.2/conv3/Conv + onnx::Mul_4737 + /backbone/backbone.0/body/layer1/layer1.2/bn3/Mul + onnx::Add_4739 + /backbone/backbone.0/body/layer1/layer1.2/bn3/Add + /backbone/backbone.0/body/layer1/layer1.2/Add + /backbone/backbone.0/body/layer1/layer1.2/relu_2/Relu
+/backbone/backbone.0/body/layer2/layer2.0/downsample/downsample.0/Conv + onnx::Mul_4777 + /backbone/backbone.0/body/layer2/layer2.0/downsample/downsample.1/Mul + onnx::Add_4779 + /backbone/backbone.0/body/layer2/layer2.0/downsample/downsample.1/Add
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer2/layer2.0/conv1/Conv + onnx::Mul_4747 + /backbone/backbone.0/body/layer2/layer2.0/bn1/Mul + onnx::Add_4749 + /backbone/backbone.0/body/layer2/layer2.0/bn1/Add + /backbone/backbone.0/body/layer2/layer2.0/relu/Relu
+/backbone/backbone.0/body/layer2/layer2.0/conv1/Conv + onnx::Mul_4747 + /backbone/backbone.0/body/layer2/layer2.0/bn1/Mul + onnx::Add_4749 + /backbone/backbone.0/body/layer2/layer2.0/bn1/Add + /backbone/backbone.0/body/layer2/layer2.0/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer2/layer2.0/conv2/Conv + onnx::Mul_4757 + /backbone/backbone.0/body/layer2/layer2.0/bn2/Mul + onnx::Add_4759 + /backbone/backbone.0/body/layer2/layer2.0/bn2/Add + /backbone/backbone.0/body/layer2/layer2.0/relu_1/Relu
+/backbone/backbone.0/body/layer2/layer2.0/conv2/Conv + onnx::Mul_4757 + /backbone/backbone.0/body/layer2/layer2.0/bn2/Mul + onnx::Add_4759 + /backbone/backbone.0/body/layer2/layer2.0/bn2/Add + /backbone/backbone.0/body/layer2/layer2.0/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer2/layer2.0/conv3/Conv + onnx::Mul_4767 + /backbone/backbone.0/body/layer2/layer2.0/bn3/Mul + onnx::Add_4769 + /backbone/backbone.0/body/layer2/layer2.0/bn3/Add + /backbone/backbone.0/body/layer2/layer2.0/Add + /backbone/backbone.0/body/layer2/layer2.0/relu_2/Relu
+Reformatting CopyNode for Input Tensor 1 to /backbone/backbone.0/body/layer2/layer2.0/conv3/Conv + onnx::Mul_4767 + /backbone/backbone.0/body/layer2/layer2.0/bn3/Mul + onnx::Add_4769 + /backbone/backbone.0/body/layer2/layer2.0/bn3/Add + /backbone/backbone.0/body/layer2/layer2.0/Add + /backbone/backbone.0/body/layer2/layer2.0/relu_2/Relu
+/backbone/backbone.0/body/layer2/layer2.0/conv3/Conv + onnx::Mul_4767 + /backbone/backbone.0/body/layer2/layer2.0/bn3/Mul + onnx::Add_4769 + /backbone/backbone.0/body/layer2/layer2.0/bn3/Add + /backbone/backbone.0/body/layer2/layer2.0/Add + /backbone/backbone.0/body/layer2/layer2.0/relu_2/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer2/layer2.1/conv1/Conv + onnx::Mul_4787 + /backbone/backbone.0/body/layer2/layer2.1/bn1/Mul + onnx::Add_4789 + /backbone/backbone.0/body/layer2/layer2.1/bn1/Add + /backbone/backbone.0/body/layer2/layer2.1/relu/Relu
+/backbone/backbone.0/body/layer2/layer2.1/conv1/Conv + onnx::Mul_4787 + /backbone/backbone.0/body/layer2/layer2.1/bn1/Mul + onnx::Add_4789 + /backbone/backbone.0/body/layer2/layer2.1/bn1/Add + /backbone/backbone.0/body/layer2/layer2.1/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer2/layer2.1/conv2/Conv + onnx::Mul_4797 + /backbone/backbone.0/body/layer2/layer2.1/bn2/Mul + onnx::Add_4799 + /backbone/backbone.0/body/layer2/layer2.1/bn2/Add + /backbone/backbone.0/body/layer2/layer2.1/relu_1/Relu
+/backbone/backbone.0/body/layer2/layer2.1/conv2/Conv + onnx::Mul_4797 + /backbone/backbone.0/body/layer2/layer2.1/bn2/Mul + onnx::Add_4799 + /backbone/backbone.0/body/layer2/layer2.1/bn2/Add + /backbone/backbone.0/body/layer2/layer2.1/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer2/layer2.1/conv3/Conv + onnx::Mul_4807 + /backbone/backbone.0/body/layer2/layer2.1/bn3/Mul + onnx::Add_4809 + /backbone/backbone.0/body/layer2/layer2.1/bn3/Add + /backbone/backbone.0/body/layer2/layer2.1/Add + /backbone/backbone.0/body/layer2/layer2.1/relu_2/Relu
+/backbone/backbone.0/body/layer2/layer2.1/conv3/Conv + onnx::Mul_4807 + /backbone/backbone.0/body/layer2/layer2.1/bn3/Mul + onnx::Add_4809 + /backbone/backbone.0/body/layer2/layer2.1/bn3/Add + /backbone/backbone.0/body/layer2/layer2.1/Add + /backbone/backbone.0/body/layer2/layer2.1/relu_2/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer2/layer2.2/conv1/Conv + onnx::Mul_4817 + /backbone/backbone.0/body/layer2/layer2.2/bn1/Mul + onnx::Add_4819 + /backbone/backbone.0/body/layer2/layer2.2/bn1/Add + /backbone/backbone.0/body/layer2/layer2.2/relu/Relu
+/backbone/backbone.0/body/layer2/layer2.2/conv1/Conv + onnx::Mul_4817 + /backbone/backbone.0/body/layer2/layer2.2/bn1/Mul + onnx::Add_4819 + /backbone/backbone.0/body/layer2/layer2.2/bn1/Add + /backbone/backbone.0/body/layer2/layer2.2/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer2/layer2.2/conv2/Conv + onnx::Mul_4827 + /backbone/backbone.0/body/layer2/layer2.2/bn2/Mul + onnx::Add_4829 + /backbone/backbone.0/body/layer2/layer2.2/bn2/Add + /backbone/backbone.0/body/layer2/layer2.2/relu_1/Relu
+/backbone/backbone.0/body/layer2/layer2.2/conv2/Conv + onnx::Mul_4827 + /backbone/backbone.0/body/layer2/layer2.2/bn2/Mul + onnx::Add_4829 + /backbone/backbone.0/body/layer2/layer2.2/bn2/Add + /backbone/backbone.0/body/layer2/layer2.2/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer2/layer2.2/conv3/Conv + onnx::Mul_4837 + /backbone/backbone.0/body/layer2/layer2.2/bn3/Mul + onnx::Add_4839 + /backbone/backbone.0/body/layer2/layer2.2/bn3/Add + /backbone/backbone.0/body/layer2/layer2.2/Add + /backbone/backbone.0/body/layer2/layer2.2/relu_2/Relu
+/backbone/backbone.0/body/layer2/layer2.2/conv3/Conv + onnx::Mul_4837 + /backbone/backbone.0/body/layer2/layer2.2/bn3/Mul + onnx::Add_4839 + /backbone/backbone.0/body/layer2/layer2.2/bn3/Add + /backbone/backbone.0/body/layer2/layer2.2/Add + /backbone/backbone.0/body/layer2/layer2.2/relu_2/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer2/layer2.3/conv1/Conv + onnx::Mul_4847 + /backbone/backbone.0/body/layer2/layer2.3/bn1/Mul + onnx::Add_4849 + /backbone/backbone.0/body/layer2/layer2.3/bn1/Add + /backbone/backbone.0/body/layer2/layer2.3/relu/Relu
+/backbone/backbone.0/body/layer2/layer2.3/conv1/Conv + onnx::Mul_4847 + /backbone/backbone.0/body/layer2/layer2.3/bn1/Mul + onnx::Add_4849 + /backbone/backbone.0/body/layer2/layer2.3/bn1/Add + /backbone/backbone.0/body/layer2/layer2.3/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer2/layer2.3/conv2/Conv + onnx::Mul_4857 + /backbone/backbone.0/body/layer2/layer2.3/bn2/Mul + onnx::Add_4859 + /backbone/backbone.0/body/layer2/layer2.3/bn2/Add + /backbone/backbone.0/body/layer2/layer2.3/relu_1/Relu
+/backbone/backbone.0/body/layer2/layer2.3/conv2/Conv + onnx::Mul_4857 + /backbone/backbone.0/body/layer2/layer2.3/bn2/Mul + onnx::Add_4859 + /backbone/backbone.0/body/layer2/layer2.3/bn2/Add + /backbone/backbone.0/body/layer2/layer2.3/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer2/layer2.3/conv3/Conv + onnx::Mul_4867 + /backbone/backbone.0/body/layer2/layer2.3/bn3/Mul + onnx::Add_4869 + /backbone/backbone.0/body/layer2/layer2.3/bn3/Add + /backbone/backbone.0/body/layer2/layer2.3/Add + /backbone/backbone.0/body/layer2/layer2.3/relu_2/Relu
+/backbone/backbone.0/body/layer2/layer2.3/conv3/Conv + onnx::Mul_4867 + /backbone/backbone.0/body/layer2/layer2.3/bn3/Mul + onnx::Add_4869 + /backbone/backbone.0/body/layer2/layer2.3/bn3/Add + /backbone/backbone.0/body/layer2/layer2.3/Add + /backbone/backbone.0/body/layer2/layer2.3/relu_2/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.0/downsample/downsample.0/Conv + onnx::Mul_4907 + /backbone/backbone.0/body/layer3/layer3.0/downsample/downsample.1/Mul + onnx::Add_4909 + /backbone/backbone.0/body/layer3/layer3.0/downsample/downsample.1/Add
+/backbone/backbone.0/body/layer3/layer3.0/downsample/downsample.0/Conv + onnx::Mul_4907 + /backbone/backbone.0/body/layer3/layer3.0/downsample/downsample.1/Mul + onnx::Add_4909 + /backbone/backbone.0/body/layer3/layer3.0/downsample/downsample.1/Add
+/backbone/backbone.0/body/layer3/layer3.0/conv1/Conv + onnx::Mul_4877 + /backbone/backbone.0/body/layer3/layer3.0/bn1/Mul + onnx::Add_4879 + /backbone/backbone.0/body/layer3/layer3.0/bn1/Add + /backbone/backbone.0/body/layer3/layer3.0/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.0/conv2/Conv + onnx::Mul_4887 + /backbone/backbone.0/body/layer3/layer3.0/bn2/Mul + onnx::Add_4889 + /backbone/backbone.0/body/layer3/layer3.0/bn2/Add + /backbone/backbone.0/body/layer3/layer3.0/relu_1/Relu
+/backbone/backbone.0/body/layer3/layer3.0/conv2/Conv + onnx::Mul_4887 + /backbone/backbone.0/body/layer3/layer3.0/bn2/Mul + onnx::Add_4889 + /backbone/backbone.0/body/layer3/layer3.0/bn2/Add + /backbone/backbone.0/body/layer3/layer3.0/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.0/conv3/Conv + onnx::Mul_4897 + /backbone/backbone.0/body/layer3/layer3.0/bn3/Mul + onnx::Add_4899 + /backbone/backbone.0/body/layer3/layer3.0/bn3/Add + /backbone/backbone.0/body/layer3/layer3.0/Add + /backbone/backbone.0/body/layer3/layer3.0/relu_2/Relu
+Reformatting CopyNode for Input Tensor 1 to /backbone/backbone.0/body/layer3/layer3.0/conv3/Conv + onnx::Mul_4897 + /backbone/backbone.0/body/layer3/layer3.0/bn3/Mul + onnx::Add_4899 + /backbone/backbone.0/body/layer3/layer3.0/bn3/Add + /backbone/backbone.0/body/layer3/layer3.0/Add + /backbone/backbone.0/body/layer3/layer3.0/relu_2/Relu
+/backbone/backbone.0/body/layer3/layer3.0/conv3/Conv + onnx::Mul_4897 + /backbone/backbone.0/body/layer3/layer3.0/bn3/Mul + onnx::Add_4899 + /backbone/backbone.0/body/layer3/layer3.0/bn3/Add + /backbone/backbone.0/body/layer3/layer3.0/Add + /backbone/backbone.0/body/layer3/layer3.0/relu_2/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.1/conv1/Conv + onnx::Mul_4917 + /backbone/backbone.0/body/layer3/layer3.1/bn1/Mul + onnx::Add_4919 + /backbone/backbone.0/body/layer3/layer3.1/bn1/Add + /backbone/backbone.0/body/layer3/layer3.1/relu/Relu
+/backbone/backbone.0/body/layer3/layer3.1/conv1/Conv + onnx::Mul_4917 + /backbone/backbone.0/body/layer3/layer3.1/bn1/Mul + onnx::Add_4919 + /backbone/backbone.0/body/layer3/layer3.1/bn1/Add + /backbone/backbone.0/body/layer3/layer3.1/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.1/conv2/Conv + onnx::Mul_4927 + /backbone/backbone.0/body/layer3/layer3.1/bn2/Mul + onnx::Add_4929 + /backbone/backbone.0/body/layer3/layer3.1/bn2/Add + /backbone/backbone.0/body/layer3/layer3.1/relu_1/Relu
+/backbone/backbone.0/body/layer3/layer3.1/conv2/Conv + onnx::Mul_4927 + /backbone/backbone.0/body/layer3/layer3.1/bn2/Mul + onnx::Add_4929 + /backbone/backbone.0/body/layer3/layer3.1/bn2/Add + /backbone/backbone.0/body/layer3/layer3.1/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.1/conv3/Conv + onnx::Mul_4937 + /backbone/backbone.0/body/layer3/layer3.1/bn3/Mul + onnx::Add_4939 + /backbone/backbone.0/body/layer3/layer3.1/bn3/Add + /backbone/backbone.0/body/layer3/layer3.1/Add + /backbone/backbone.0/body/layer3/layer3.1/relu_2/Relu
+/backbone/backbone.0/body/layer3/layer3.1/conv3/Conv + onnx::Mul_4937 + /backbone/backbone.0/body/layer3/layer3.1/bn3/Mul + onnx::Add_4939 + /backbone/backbone.0/body/layer3/layer3.1/bn3/Add + /backbone/backbone.0/body/layer3/layer3.1/Add + /backbone/backbone.0/body/layer3/layer3.1/relu_2/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.2/conv1/Conv + onnx::Mul_4947 + /backbone/backbone.0/body/layer3/layer3.2/bn1/Mul + onnx::Add_4949 + /backbone/backbone.0/body/layer3/layer3.2/bn1/Add + /backbone/backbone.0/body/layer3/layer3.2/relu/Relu
+/backbone/backbone.0/body/layer3/layer3.2/conv1/Conv + onnx::Mul_4947 + /backbone/backbone.0/body/layer3/layer3.2/bn1/Mul + onnx::Add_4949 + /backbone/backbone.0/body/layer3/layer3.2/bn1/Add + /backbone/backbone.0/body/layer3/layer3.2/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.2/conv2/Conv + onnx::Mul_4957 + /backbone/backbone.0/body/layer3/layer3.2/bn2/Mul + onnx::Add_4959 + /backbone/backbone.0/body/layer3/layer3.2/bn2/Add + /backbone/backbone.0/body/layer3/layer3.2/relu_1/Relu
+/backbone/backbone.0/body/layer3/layer3.2/conv2/Conv + onnx::Mul_4957 + /backbone/backbone.0/body/layer3/layer3.2/bn2/Mul + onnx::Add_4959 + /backbone/backbone.0/body/layer3/layer3.2/bn2/Add + /backbone/backbone.0/body/layer3/layer3.2/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.2/conv3/Conv + onnx::Mul_4967 + /backbone/backbone.0/body/layer3/layer3.2/bn3/Mul + onnx::Add_4969 + /backbone/backbone.0/body/layer3/layer3.2/bn3/Add + /backbone/backbone.0/body/layer3/layer3.2/Add + /backbone/backbone.0/body/layer3/layer3.2/relu_2/Relu
+/backbone/backbone.0/body/layer3/layer3.2/conv3/Conv + onnx::Mul_4967 + /backbone/backbone.0/body/layer3/layer3.2/bn3/Mul + onnx::Add_4969 + /backbone/backbone.0/body/layer3/layer3.2/bn3/Add + /backbone/backbone.0/body/layer3/layer3.2/Add + /backbone/backbone.0/body/layer3/layer3.2/relu_2/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.3/conv1/Conv + onnx::Mul_4977 + /backbone/backbone.0/body/layer3/layer3.3/bn1/Mul + onnx::Add_4979 + /backbone/backbone.0/body/layer3/layer3.3/bn1/Add + /backbone/backbone.0/body/layer3/layer3.3/relu/Relu
+/backbone/backbone.0/body/layer3/layer3.3/conv1/Conv + onnx::Mul_4977 + /backbone/backbone.0/body/layer3/layer3.3/bn1/Mul + onnx::Add_4979 + /backbone/backbone.0/body/layer3/layer3.3/bn1/Add + /backbone/backbone.0/body/layer3/layer3.3/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.3/conv2/Conv + onnx::Mul_4987 + /backbone/backbone.0/body/layer3/layer3.3/bn2/Mul + onnx::Add_4989 + /backbone/backbone.0/body/layer3/layer3.3/bn2/Add + /backbone/backbone.0/body/layer3/layer3.3/relu_1/Relu
+/backbone/backbone.0/body/layer3/layer3.3/conv2/Conv + onnx::Mul_4987 + /backbone/backbone.0/body/layer3/layer3.3/bn2/Mul + onnx::Add_4989 + /backbone/backbone.0/body/layer3/layer3.3/bn2/Add + /backbone/backbone.0/body/layer3/layer3.3/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.3/conv3/Conv + onnx::Mul_4997 + /backbone/backbone.0/body/layer3/layer3.3/bn3/Mul + onnx::Add_4999 + /backbone/backbone.0/body/layer3/layer3.3/bn3/Add + /backbone/backbone.0/body/layer3/layer3.3/Add + /backbone/backbone.0/body/layer3/layer3.3/relu_2/Relu
+/backbone/backbone.0/body/layer3/layer3.3/conv3/Conv + onnx::Mul_4997 + /backbone/backbone.0/body/layer3/layer3.3/bn3/Mul + onnx::Add_4999 + /backbone/backbone.0/body/layer3/layer3.3/bn3/Add + /backbone/backbone.0/body/layer3/layer3.3/Add + /backbone/backbone.0/body/layer3/layer3.3/relu_2/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.4/conv1/Conv + onnx::Mul_5007 + /backbone/backbone.0/body/layer3/layer3.4/bn1/Mul + onnx::Add_5009 + /backbone/backbone.0/body/layer3/layer3.4/bn1/Add + /backbone/backbone.0/body/layer3/layer3.4/relu/Relu
+/backbone/backbone.0/body/layer3/layer3.4/conv1/Conv + onnx::Mul_5007 + /backbone/backbone.0/body/layer3/layer3.4/bn1/Mul + onnx::Add_5009 + /backbone/backbone.0/body/layer3/layer3.4/bn1/Add + /backbone/backbone.0/body/layer3/layer3.4/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.4/conv2/Conv + onnx::Mul_5017 + /backbone/backbone.0/body/layer3/layer3.4/bn2/Mul + onnx::Add_5019 + /backbone/backbone.0/body/layer3/layer3.4/bn2/Add + /backbone/backbone.0/body/layer3/layer3.4/relu_1/Relu
+/backbone/backbone.0/body/layer3/layer3.4/conv2/Conv + onnx::Mul_5017 + /backbone/backbone.0/body/layer3/layer3.4/bn2/Mul + onnx::Add_5019 + /backbone/backbone.0/body/layer3/layer3.4/bn2/Add + /backbone/backbone.0/body/layer3/layer3.4/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.4/conv3/Conv + onnx::Mul_5027 + /backbone/backbone.0/body/layer3/layer3.4/bn3/Mul + onnx::Add_5029 + /backbone/backbone.0/body/layer3/layer3.4/bn3/Add + /backbone/backbone.0/body/layer3/layer3.4/Add + /backbone/backbone.0/body/layer3/layer3.4/relu_2/Relu
+/backbone/backbone.0/body/layer3/layer3.4/conv3/Conv + onnx::Mul_5027 + /backbone/backbone.0/body/layer3/layer3.4/bn3/Mul + onnx::Add_5029 + /backbone/backbone.0/body/layer3/layer3.4/bn3/Add + /backbone/backbone.0/body/layer3/layer3.4/Add + /backbone/backbone.0/body/layer3/layer3.4/relu_2/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.5/conv1/Conv + onnx::Mul_5037 + /backbone/backbone.0/body/layer3/layer3.5/bn1/Mul + onnx::Add_5039 + /backbone/backbone.0/body/layer3/layer3.5/bn1/Add + /backbone/backbone.0/body/layer3/layer3.5/relu/Relu
+/backbone/backbone.0/body/layer3/layer3.5/conv1/Conv + onnx::Mul_5037 + /backbone/backbone.0/body/layer3/layer3.5/bn1/Mul + onnx::Add_5039 + /backbone/backbone.0/body/layer3/layer3.5/bn1/Add + /backbone/backbone.0/body/layer3/layer3.5/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.5/conv2/Conv + onnx::Mul_5047 + /backbone/backbone.0/body/layer3/layer3.5/bn2/Mul + onnx::Add_5049 + /backbone/backbone.0/body/layer3/layer3.5/bn2/Add + /backbone/backbone.0/body/layer3/layer3.5/relu_1/Relu
+/backbone/backbone.0/body/layer3/layer3.5/conv2/Conv + onnx::Mul_5047 + /backbone/backbone.0/body/layer3/layer3.5/bn2/Mul + onnx::Add_5049 + /backbone/backbone.0/body/layer3/layer3.5/bn2/Add + /backbone/backbone.0/body/layer3/layer3.5/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer3/layer3.5/conv3/Conv + onnx::Mul_5057 + /backbone/backbone.0/body/layer3/layer3.5/bn3/Mul + onnx::Add_5059 + /backbone/backbone.0/body/layer3/layer3.5/bn3/Add + /backbone/backbone.0/body/layer3/layer3.5/Add + /backbone/backbone.0/body/layer3/layer3.5/relu_2/Relu
+/backbone/backbone.0/body/layer3/layer3.5/conv3/Conv + onnx::Mul_5057 + /backbone/backbone.0/body/layer3/layer3.5/bn3/Mul + onnx::Add_5059 + /backbone/backbone.0/body/layer3/layer3.5/bn3/Add + /backbone/backbone.0/body/layer3/layer3.5/Add + /backbone/backbone.0/body/layer3/layer3.5/relu_2/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer4/layer4.0/downsample/downsample.0/Conv + onnx::Mul_5097 + /backbone/backbone.0/body/layer4/layer4.0/downsample/downsample.1/Mul + onnx::Add_5099 + /backbone/backbone.0/body/layer4/layer4.0/downsample/downsample.1/Add
+/backbone/backbone.0/body/layer4/layer4.0/downsample/downsample.0/Conv + onnx::Mul_5097 + /backbone/backbone.0/body/layer4/layer4.0/downsample/downsample.1/Mul + onnx::Add_5099 + /backbone/backbone.0/body/layer4/layer4.0/downsample/downsample.1/Add
+/backbone/backbone.0/body/layer4/layer4.0/conv1/Conv + onnx::Mul_5067 + /backbone/backbone.0/body/layer4/layer4.0/bn1/Mul + onnx::Add_5069 + /backbone/backbone.0/body/layer4/layer4.0/bn1/Add + /backbone/backbone.0/body/layer4/layer4.0/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer4/layer4.0/conv2/Conv + onnx::Mul_5077 + /backbone/backbone.0/body/layer4/layer4.0/bn2/Mul + onnx::Add_5079 + /backbone/backbone.0/body/layer4/layer4.0/bn2/Add + /backbone/backbone.0/body/layer4/layer4.0/relu_1/Relu
+/backbone/backbone.0/body/layer4/layer4.0/conv2/Conv + onnx::Mul_5077 + /backbone/backbone.0/body/layer4/layer4.0/bn2/Mul + onnx::Add_5079 + /backbone/backbone.0/body/layer4/layer4.0/bn2/Add + /backbone/backbone.0/body/layer4/layer4.0/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer4/layer4.0/conv3/Conv + onnx::Mul_5087 + /backbone/backbone.0/body/layer4/layer4.0/bn3/Mul + onnx::Add_5089 + /backbone/backbone.0/body/layer4/layer4.0/bn3/Add + /backbone/backbone.0/body/layer4/layer4.0/Add + /backbone/backbone.0/body/layer4/layer4.0/relu_2/Relu
+Reformatting CopyNode for Input Tensor 1 to /backbone/backbone.0/body/layer4/layer4.0/conv3/Conv + onnx::Mul_5087 + /backbone/backbone.0/body/layer4/layer4.0/bn3/Mul + onnx::Add_5089 + /backbone/backbone.0/body/layer4/layer4.0/bn3/Add + /backbone/backbone.0/body/layer4/layer4.0/Add + /backbone/backbone.0/body/layer4/layer4.0/relu_2/Relu
+/backbone/backbone.0/body/layer4/layer4.0/conv3/Conv + onnx::Mul_5087 + /backbone/backbone.0/body/layer4/layer4.0/bn3/Mul + onnx::Add_5089 + /backbone/backbone.0/body/layer4/layer4.0/bn3/Add + /backbone/backbone.0/body/layer4/layer4.0/Add + /backbone/backbone.0/body/layer4/layer4.0/relu_2/Relu
+/backbone/backbone.0/body/layer4/layer4.1/conv1/Conv + onnx::Mul_5107 + /backbone/backbone.0/body/layer4/layer4.1/bn1/Mul + onnx::Add_5109 + /backbone/backbone.0/body/layer4/layer4.1/bn1/Add + /backbone/backbone.0/body/layer4/layer4.1/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer4/layer4.1/conv2/Conv + onnx::Mul_5117 + /backbone/backbone.0/body/layer4/layer4.1/bn2/Mul + onnx::Add_5119 + /backbone/backbone.0/body/layer4/layer4.1/bn2/Add + /backbone/backbone.0/body/layer4/layer4.1/relu_1/Relu
+/backbone/backbone.0/body/layer4/layer4.1/conv2/Conv + onnx::Mul_5117 + /backbone/backbone.0/body/layer4/layer4.1/bn2/Mul + onnx::Add_5119 + /backbone/backbone.0/body/layer4/layer4.1/bn2/Add + /backbone/backbone.0/body/layer4/layer4.1/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer4/layer4.1/conv3/Conv + onnx::Mul_5127 + /backbone/backbone.0/body/layer4/layer4.1/bn3/Mul + onnx::Add_5129 + /backbone/backbone.0/body/layer4/layer4.1/bn3/Add + /backbone/backbone.0/body/layer4/layer4.1/Add + /backbone/backbone.0/body/layer4/layer4.1/relu_2/Relu
+/backbone/backbone.0/body/layer4/layer4.1/conv3/Conv + onnx::Mul_5127 + /backbone/backbone.0/body/layer4/layer4.1/bn3/Mul + onnx::Add_5129 + /backbone/backbone.0/body/layer4/layer4.1/bn3/Add + /backbone/backbone.0/body/layer4/layer4.1/Add + /backbone/backbone.0/body/layer4/layer4.1/relu_2/Relu
+/backbone/backbone.0/body/layer4/layer4.2/conv1/Conv + onnx::Mul_5137 + /backbone/backbone.0/body/layer4/layer4.2/bn1/Mul + onnx::Add_5139 + /backbone/backbone.0/body/layer4/layer4.2/bn1/Add + /backbone/backbone.0/body/layer4/layer4.2/relu/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer4/layer4.2/conv2/Conv + onnx::Mul_5147 + /backbone/backbone.0/body/layer4/layer4.2/bn2/Mul + onnx::Add_5149 + /backbone/backbone.0/body/layer4/layer4.2/bn2/Add + /backbone/backbone.0/body/layer4/layer4.2/relu_1/Relu
+/backbone/backbone.0/body/layer4/layer4.2/conv2/Conv + onnx::Mul_5147 + /backbone/backbone.0/body/layer4/layer4.2/bn2/Mul + onnx::Add_5149 + /backbone/backbone.0/body/layer4/layer4.2/bn2/Add + /backbone/backbone.0/body/layer4/layer4.2/relu_1/Relu
+Reformatting CopyNode for Input Tensor 0 to /backbone/backbone.0/body/layer4/layer4.2/conv3/Conv + onnx::Mul_5157 + /backbone/backbone.0/body/layer4/layer4.2/bn3/Mul + onnx::Add_5159 + /backbone/backbone.0/body/layer4/layer4.2/bn3/Add + /backbone/backbone.0/body/layer4/layer4.2/Add + /backbone/backbone.0/body/layer4/layer4.2/relu_2/Relu
+/backbone/backbone.0/body/layer4/layer4.2/conv3/Conv + onnx::Mul_5157 + /backbone/backbone.0/body/layer4/layer4.2/bn3/Mul + onnx::Add_5159 + /backbone/backbone.0/body/layer4/layer4.2/bn3/Add + /backbone/backbone.0/body/layer4/layer4.2/Add + /backbone/backbone.0/body/layer4/layer4.2/relu_2/Relu
+/input_proj/Conv
+PWN(/backbone/backbone.1/Sin)
+PWN(/backbone/backbone.1/Cos)
+PWN(/backbone/backbone.1/Sin_1)
+PWN(/backbone/backbone.1/Cos_1)
+Reformatting CopyNode for Input Tensor 1 to {ForeignNode[transformer.decoder.layers.0.norm1.weight + (Unnamed Layer* 1606) [Shuffle].../Gather_3]}
+{ForeignNode[transformer.decoder.layers.0.norm1.weight + (Unnamed Layer* 1606) [Shuffle].../Gather_3]}
+
+Bindings:
+samples
+4616
+4617
+[05/01/2024-15:39:16] [I] Starting inference
+[05/01/2024-15:39:19] [I] Warmup completed 25 queries over 200 ms
+[05/01/2024-15:39:19] [I] Timing trace has 368 queries over 3.02527 s
+[05/01/2024-15:39:19] [I] 
+[05/01/2024-15:39:19] [I] === Trace details ===
+[05/01/2024-15:39:19] [I] Trace averages of 10 runs:
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.20009 ms - Host latency: 8.54371 ms (enqueue 3.67759 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.16169 ms - Host latency: 8.50875 ms (enqueue 3.68574 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.21289 ms - Host latency: 8.55096 ms (enqueue 3.639 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.22282 ms - Host latency: 8.56647 ms (enqueue 3.6808 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.2093 ms - Host latency: 8.55178 ms (enqueue 3.65658 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.16978 ms - Host latency: 8.51592 ms (enqueue 3.68057 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.22783 ms - Host latency: 8.56967 ms (enqueue 3.65974 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.19037 ms - Host latency: 8.53787 ms (enqueue 3.69118 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.17551 ms - Host latency: 8.51459 ms (enqueue 3.64066 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.1749 ms - Host latency: 8.52073 ms (enqueue 3.70469 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.21887 ms - Host latency: 8.56307 ms (enqueue 3.68598 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.18291 ms - Host latency: 8.53281 ms (enqueue 3.69626 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.19598 ms - Host latency: 8.52731 ms (enqueue 3.62025 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.21373 ms - Host latency: 8.55997 ms (enqueue 3.67874 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.18782 ms - Host latency: 8.52384 ms (enqueue 3.6322 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.19269 ms - Host latency: 8.53962 ms (enqueue 3.69537 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.18832 ms - Host latency: 8.53488 ms (enqueue 3.69093 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.20449 ms - Host latency: 8.55031 ms (enqueue 3.6994 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.2126 ms - Host latency: 8.54783 ms (enqueue 3.65715 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.18514 ms - Host latency: 8.53203 ms (enqueue 3.70413 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.24443 ms - Host latency: 8.57832 ms (enqueue 3.66127 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.17522 ms - Host latency: 8.52225 ms (enqueue 3.69908 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.20615 ms - Host latency: 8.55021 ms (enqueue 3.70468 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.19692 ms - Host latency: 8.54504 ms (enqueue 3.69817 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.21616 ms - Host latency: 8.55859 ms (enqueue 3.67788 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.19634 ms - Host latency: 8.5437 ms (enqueue 3.69048 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.18665 ms - Host latency: 8.52236 ms (enqueue 3.65146 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.2042 ms - Host latency: 8.54966 ms (enqueue 3.68853 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.20703 ms - Host latency: 8.5531 ms (enqueue 3.68687 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.18347 ms - Host latency: 8.52979 ms (enqueue 3.70322 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.17429 ms - Host latency: 8.51567 ms (enqueue 3.64253 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.21208 ms - Host latency: 8.55918 ms (enqueue 3.69026 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.1968 ms - Host latency: 8.53897 ms (enqueue 3.66003 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.17898 ms - Host latency: 8.52593 ms (enqueue 3.70322 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.19463 ms - Host latency: 8.53586 ms (enqueue 3.65842 ms)
+[05/01/2024-15:39:19] [I] Average on 10 runs - GPU latency: 8.20093 ms - Host latency: 8.54641 ms (enqueue 3.69136 ms)
+[05/01/2024-15:39:19] [I] 
+[05/01/2024-15:39:19] [I] === Performance summary ===
+[05/01/2024-15:39:19] [I] Throughput: 121.642 qps
+[05/01/2024-15:39:19] [I] Latency: min = 8.24756 ms, max = 8.65686 ms, mean = 8.53975 ms, median = 8.53955 ms, percentile(90%) = 8.58789 ms, percentile(95%) = 8.60223 ms, percentile(99%) = 8.63818 ms
+[05/01/2024-15:39:19] [I] Enqueue Time: min = 3.50989 ms, max = 3.81982 ms, mean = 3.67756 ms, median = 3.68671 ms, percentile(90%) = 3.72473 ms, percentile(95%) = 3.7395 ms, percentile(99%) = 3.79358 ms
+[05/01/2024-15:39:19] [I] H2D Latency: min = 0.295776 ms, max = 0.360474 ms, mean = 0.33172 ms, median = 0.333984 ms, percentile(90%) = 0.339355 ms, percentile(95%) = 0.34082 ms, percentile(99%) = 0.346802 ms
+[05/01/2024-15:39:19] [I] GPU Compute Time: min = 7.90527 ms, max = 8.30774 ms, mean = 8.19627 ms, median = 8.19458 ms, percentile(90%) = 8.24524 ms, percentile(95%) = 8.25854 ms, percentile(99%) = 8.29858 ms
+[05/01/2024-15:39:19] [I] D2H Latency: min = 0.00830078 ms, max = 0.0183105 ms, mean = 0.0117539 ms, median = 0.0117188 ms, percentile(90%) = 0.013916 ms, percentile(95%) = 0.0145264 ms, percentile(99%) = 0.0153809 ms
+[05/01/2024-15:39:19] [I] Total Host Walltime: 3.02527 s
+[05/01/2024-15:39:19] [I] Total GPU Compute Time: 3.01623 s
+[05/01/2024-15:39:19] [I] Explanations of the performance metrics are printed in the verbose logs.
+[05/01/2024-15:39:19] [I] 
+&&&& PASSED TensorRT.trtexec [TensorRT v8601] # /usr/local/TensorRT-8.6.1.6/bin/trtexec --onnx=./detr.onnx --saveEngine=./detr.engine --dumpLayerInfo

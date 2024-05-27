@@ -1,0 +1,248 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v8601] # /usr/local/TensorRT-8.6.1.6/bin/trtexec --onnx=./segformer.b1.512x512.ade.160k.onnx --saveEngine=./segformer.engine --dumpLayerInfo
+[05/01/2024-16:19:01] [I] === Model Options ===
+[05/01/2024-16:19:01] [I] Format: ONNX
+[05/01/2024-16:19:01] [I] Model: ./segformer.b1.512x512.ade.160k.onnx
+[05/01/2024-16:19:01] [I] Output:
+[05/01/2024-16:19:01] [I] === Build Options ===
+[05/01/2024-16:19:01] [I] Max batch: explicit batch
+[05/01/2024-16:19:01] [I] Memory Pools: workspace: default, dlaSRAM: default, dlaLocalDRAM: default, dlaGlobalDRAM: default
+[05/01/2024-16:19:01] [I] minTiming: 1
+[05/01/2024-16:19:01] [I] avgTiming: 8
+[05/01/2024-16:19:01] [I] Precision: FP32
+[05/01/2024-16:19:01] [I] LayerPrecisions: 
+[05/01/2024-16:19:01] [I] Layer Device Types: 
+[05/01/2024-16:19:01] [I] Calibration: 
+[05/01/2024-16:19:01] [I] Refit: Disabled
+[05/01/2024-16:19:01] [I] Version Compatible: Disabled
+[05/01/2024-16:19:01] [I] TensorRT runtime: full
+[05/01/2024-16:19:01] [I] Lean DLL Path: 
+[05/01/2024-16:19:01] [I] Tempfile Controls: { in_memory: allow, temporary: allow }
+[05/01/2024-16:19:01] [I] Exclude Lean Runtime: Disabled
+[05/01/2024-16:19:01] [I] Sparsity: Disabled
+[05/01/2024-16:19:01] [I] Safe mode: Disabled
+[05/01/2024-16:19:01] [I] Build DLA standalone loadable: Disabled
+[05/01/2024-16:19:01] [I] Allow GPU fallback for DLA: Disabled
+[05/01/2024-16:19:01] [I] DirectIO mode: Disabled
+[05/01/2024-16:19:01] [I] Restricted mode: Disabled
+[05/01/2024-16:19:01] [I] Skip inference: Disabled
+[05/01/2024-16:19:01] [I] Save engine: ./segformer.engine
+[05/01/2024-16:19:01] [I] Load engine: 
+[05/01/2024-16:19:01] [I] Profiling verbosity: 0
+[05/01/2024-16:19:01] [I] Tactic sources: Using default tactic sources
+[05/01/2024-16:19:01] [I] timingCacheMode: local
+[05/01/2024-16:19:01] [I] timingCacheFile: 
+[05/01/2024-16:19:01] [I] Heuristic: Disabled
+[05/01/2024-16:19:01] [I] Preview Features: Use default preview flags.
+[05/01/2024-16:19:01] [I] MaxAuxStreams: -1
+[05/01/2024-16:19:01] [I] BuilderOptimizationLevel: -1
+[05/01/2024-16:19:01] [I] Input(s)s format: fp32:CHW
+[05/01/2024-16:19:01] [I] Output(s)s format: fp32:CHW
+[05/01/2024-16:19:01] [I] Input build shapes: model
+[05/01/2024-16:19:01] [I] Input calibration shapes: model
+[05/01/2024-16:19:01] [I] === System Options ===
+[05/01/2024-16:19:01] [I] Device: 0
+[05/01/2024-16:19:01] [I] DLACore: 
+[05/01/2024-16:19:01] [I] Plugins:
+[05/01/2024-16:19:01] [I] setPluginsToSerialize:
+[05/01/2024-16:19:01] [I] dynamicPlugins:
+[05/01/2024-16:19:01] [I] ignoreParsedPluginLibs: 0
+[05/01/2024-16:19:01] [I] 
+[05/01/2024-16:19:01] [I] === Inference Options ===
+[05/01/2024-16:19:01] [I] Batch: Explicit
+[05/01/2024-16:19:01] [I] Input inference shapes: model
+[05/01/2024-16:19:01] [I] Iterations: 10
+[05/01/2024-16:19:01] [I] Duration: 3s (+ 200ms warm up)
+[05/01/2024-16:19:01] [I] Sleep time: 0ms
+[05/01/2024-16:19:01] [I] Idle time: 0ms
+[05/01/2024-16:19:01] [I] Inference Streams: 1
+[05/01/2024-16:19:01] [I] ExposeDMA: Disabled
+[05/01/2024-16:19:01] [I] Data transfers: Enabled
+[05/01/2024-16:19:01] [I] Spin-wait: Disabled
+[05/01/2024-16:19:01] [I] Multithreading: Disabled
+[05/01/2024-16:19:01] [I] CUDA Graph: Disabled
+[05/01/2024-16:19:01] [I] Separate profiling: Disabled
+[05/01/2024-16:19:01] [I] Time Deserialize: Disabled
+[05/01/2024-16:19:01] [I] Time Refit: Disabled
+[05/01/2024-16:19:01] [I] NVTX verbosity: 0
+[05/01/2024-16:19:01] [I] Persistent Cache Ratio: 0
+[05/01/2024-16:19:01] [I] Inputs:
+[05/01/2024-16:19:01] [I] === Reporting Options ===
+[05/01/2024-16:19:01] [I] Verbose: Disabled
+[05/01/2024-16:19:01] [I] Averages: 10 inferences
+[05/01/2024-16:19:01] [I] Percentiles: 90,95,99
+[05/01/2024-16:19:01] [I] Dump refittable layers:Disabled
+[05/01/2024-16:19:01] [I] Dump output: Disabled
+[05/01/2024-16:19:01] [I] Profile: Disabled
+[05/01/2024-16:19:01] [I] Export timing to JSON file: 
+[05/01/2024-16:19:01] [I] Export output to JSON file: 
+[05/01/2024-16:19:01] [I] Export profile to JSON file: 
+[05/01/2024-16:19:01] [I] 
+[05/01/2024-16:19:04] [I] === Device Information ===
+[05/01/2024-16:19:04] [I] Selected Device: NVIDIA TITAN V
+[05/01/2024-16:19:04] [I] Compute Capability: 7.0
+[05/01/2024-16:19:04] [I] SMs: 80
+[05/01/2024-16:19:04] [I] Device Global Memory: 12042 MiB
+[05/01/2024-16:19:04] [I] Shared Memory per SM: 96 KiB
+[05/01/2024-16:19:04] [I] Memory Bus Width: 3072 bits (ECC disabled)
+[05/01/2024-16:19:04] [I] Application Compute Clock Rate: 1.455 GHz
+[05/01/2024-16:19:04] [I] Application Memory Clock Rate: 0.85 GHz
+[05/01/2024-16:19:04] [I] 
+[05/01/2024-16:19:04] [I] Note: The application clock rates do not reflect the actual clock rates that the GPU is currently running at.
+[05/01/2024-16:19:04] [I] 
+[05/01/2024-16:19:04] [I] TensorRT version: 8.6.1
+[05/01/2024-16:19:04] [I] Loading standard plugins
+[05/01/2024-16:19:04] [I] [TRT] [MemUsageChange] Init CUDA: CPU +17, GPU +0, now: CPU 23, GPU 309 (MiB)
+[05/01/2024-16:19:13] [I] [TRT] [MemUsageChange] Init builder kernel library: CPU +431, GPU +74, now: CPU 530, GPU 383 (MiB)
+[05/01/2024-16:19:14] [I] Start parsing network model.
+[05/01/2024-16:19:14] [I] [TRT] ----------------------------------------------------------------
+[05/01/2024-16:19:14] [I] [TRT] Input filename:   ./segformer.b1.512x512.ade.160k.onnx
+[05/01/2024-16:19:14] [I] [TRT] ONNX IR version:  0.0.6
+[05/01/2024-16:19:14] [I] [TRT] Opset version:    11
+[05/01/2024-16:19:14] [I] [TRT] Producer name:    pytorch
+[05/01/2024-16:19:14] [I] [TRT] Producer version: 1.11.0
+[05/01/2024-16:19:14] [I] [TRT] Domain:           
+[05/01/2024-16:19:14] [I] [TRT] Model version:    0
+[05/01/2024-16:19:14] [I] [TRT] Doc string:       
+[05/01/2024-16:19:14] [I] [TRT] ----------------------------------------------------------------
+[05/01/2024-16:19:14] [W] [TRT] onnx2trt_utils.cpp:374: Your ONNX model has been generated with INT64 weights, while TensorRT does not natively support INT64. Attempting to cast down to INT32.
+[05/01/2024-16:19:14] [W] [TRT] Tensor DataType is determined at build time for tensors not marked as input or output.
+[05/01/2024-16:19:14] [I] Finished parsing network model. Parse time: 0.358214
+[05/01/2024-16:19:14] [I] [TRT] BuilderFlag::kTF32 is set but hardware does not support TF32. Disabling TF32.
+[05/01/2024-16:19:14] [I] [TRT] Graph optimization time: 0.125154 seconds.
+[05/01/2024-16:19:14] [I] [TRT] BuilderFlag::kTF32 is set but hardware does not support TF32. Disabling TF32.
+[05/01/2024-16:19:14] [I] [TRT] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[05/01/2024-16:20:03] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[05/01/2024-16:20:03] [I] [TRT] Total Host Persistent Memory: 91696
+[05/01/2024-16:20:03] [I] [TRT] Total Device Persistent Memory: 317440
+[05/01/2024-16:20:03] [I] [TRT] Total Scratch Memory: 157286400
+[05/01/2024-16:20:03] [I] [TRT] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 5 MiB, GPU 450 MiB
+[05/01/2024-16:20:03] [I] [TRT] [BlockAssignment] Started assigning block shifts. This will take 107 steps to complete.
+[05/01/2024-16:20:03] [I] [TRT] [BlockAssignment] Algorithm ShiftNTopDown took 12.3005ms to assign 10 blocks to 107 nodes requiring 515899392 bytes.
+[05/01/2024-16:20:03] [I] [TRT] Total Activation Memory: 515899392
+[05/01/2024-16:20:03] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in building engine: CPU +0, GPU +53, now: CPU 0, GPU 53 (MiB)
+[05/01/2024-16:20:03] [I] Engine built in 59.8946 sec.
+[05/01/2024-16:20:04] [I] [TRT] Loaded engine size: 54 MiB
+[05/01/2024-16:20:04] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +52, now: CPU 0, GPU 52 (MiB)
+[05/01/2024-16:20:04] [I] Engine deserialized in 0.0713274 sec.
+[05/01/2024-16:20:04] [I] [TRT] [MS] Running engine with multi stream info
+[05/01/2024-16:20:04] [I] [TRT] [MS] Number of aux streams is 3
+[05/01/2024-16:20:04] [I] [TRT] [MS] Number of total worker streams is 4
+[05/01/2024-16:20:04] [I] [TRT] [MS] The main stream provided by execute/enqueue calls is the first worker stream
+[05/01/2024-16:20:04] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +492, now: CPU 0, GPU 544 (MiB)
+[05/01/2024-16:20:04] [I] Setting persistentCacheLimit to 0 bytes.
+[05/01/2024-16:20:04] [I] Using random values for input img
+[05/01/2024-16:20:04] [I] Input binding for img with dimensions 1x3x512x512 is created.
+[05/01/2024-16:20:04] [I] Output binding for logits with dimensions 1x1x512x512 is created.
+[05/01/2024-16:20:04] [I] Layer Information:
+[05/01/2024-16:20:04] [I] [TRT] The profiling verbosity was set to ProfilingVerbosity::kLAYER_NAMES_ONLY when the engine was built, so only the layer names will be returned. Rebuild the engine with ProfilingVerbosity::kDETAILED to get more verbose layer information.
+[05/01/2024-16:20:04] [I] Layers:
+Conv_0
+{ForeignNode[Reshape_8 + Transpose_9...Transpose_36 + Reshape_37]}
+Reformatting CopyNode for Output Tensor 2 to {ForeignNode[Reshape_8 + Transpose_9...Transpose_36 + Reshape_37]}
+Conv_38
+Reformatting CopyNode for Input Tensor 1 to {ForeignNode[onnx::MatMul_1514 + (Unnamed Layer* 42) [Shuffle]...Transpose_84 + Reshape_85]}
+{ForeignNode[onnx::MatMul_1514 + (Unnamed Layer* 42) [Shuffle]...Transpose_84 + Reshape_85]}
+Conv_86
+{ForeignNode[backbone.block1.0.mlp.fc2.bias + (Unnamed Layer* 148) [Shuffle]...Transpose_122 + Reshape_123]}
+Reformatting CopyNode for Output Tensor 2 to {ForeignNode[backbone.block1.0.mlp.fc2.bias + (Unnamed Layer* 148) [Shuffle]...Transpose_122 + Reshape_123]}
+Conv_124
+Reformatting CopyNode for Input Tensor 1 to {ForeignNode[onnx::MatMul_1548 + (Unnamed Layer* 169) [Shuffle]...Transpose_170 + Reshape_171]}
+{ForeignNode[onnx::MatMul_1548 + (Unnamed Layer* 169) [Shuffle]...Transpose_170 + Reshape_171]}
+Conv_172
+{ForeignNode[backbone.block1.1.mlp.fc2.bias + (Unnamed Layer* 275) [Shuffle]...Reshape_204 + Transpose_205]}
+Conv_206
+{ForeignNode[Reshape_214 + Transpose_215...Transpose_242 + Reshape_243]}
+Reformatting CopyNode for Input Tensor 0 to Conv_244
+Conv_244
+Reformatting CopyNode for Input Tensor 1 to {ForeignNode[onnx::MatMul_1587 + (Unnamed Layer* 339) [Shuffle]...Transpose_290 + Reshape_291]}
+{ForeignNode[onnx::MatMul_1587 + (Unnamed Layer* 339) [Shuffle]...Transpose_290 + Reshape_291]}
+Conv_292
+{ForeignNode[backbone.block2.0.mlp.fc2.bias + (Unnamed Layer* 445) [Shuffle]...Transpose_328 + Reshape_329]}
+Reformatting CopyNode for Input Tensor 0 to Conv_330
+Conv_330
+Reformatting CopyNode for Input Tensor 1 to {ForeignNode[onnx::MatMul_1621 + (Unnamed Layer* 466) [Shuffle]...Transpose_376 + Reshape_377]}
+{ForeignNode[onnx::MatMul_1621 + (Unnamed Layer* 466) [Shuffle]...Transpose_376 + Reshape_377]}
+Conv_378
+{ForeignNode[backbone.block2.1.mlp.fc2.bias + (Unnamed Layer* 572) [Shuffle]...Reshape_410 + Transpose_411]}
+Reformatting CopyNode for Input Tensor 0 to Conv_412
+Conv_412
+Reformatting CopyNode for Input Tensor 0 to {ForeignNode[Reshape_420 + Transpose_421...Transpose_448 + Reshape_449]}
+{ForeignNode[Reshape_420 + Transpose_421...Transpose_448 + Reshape_449]}
+Reformatting CopyNode for Input Tensor 0 to Conv_450
+Conv_450
+Reformatting CopyNode for Input Tensor 1 to {ForeignNode[onnx::MatMul_1660 + (Unnamed Layer* 636) [Shuffle]...Transpose_496 + Reshape_497]}
+{ForeignNode[onnx::MatMul_1660 + (Unnamed Layer* 636) [Shuffle]...Transpose_496 + Reshape_497]}
+Conv_498
+{ForeignNode[backbone.block3.0.mlp.fc2.bias + (Unnamed Layer* 742) [Shuffle]...Transpose_534 + Reshape_535]}
+Reformatting CopyNode for Input Tensor 0 to Conv_536
+Conv_536
+Reformatting CopyNode for Input Tensor 1 to {ForeignNode[onnx::MatMul_1694 + (Unnamed Layer* 763) [Shuffle]...Transpose_582 + Reshape_583]}
+{ForeignNode[onnx::MatMul_1694 + (Unnamed Layer* 763) [Shuffle]...Transpose_582 + Reshape_583]}
+Conv_584
+{ForeignNode[backbone.block3.1.mlp.fc2.bias + (Unnamed Layer* 869) [Shuffle]...Reshape_616 + Transpose_617]}
+Reformatting CopyNode for Input Tensor 0 to Conv_618
+Conv_618
+Reformatting CopyNode for Input Tensor 0 to {ForeignNode[Reshape_626 + Transpose_627...Transpose_686 + Reshape_687]}
+{ForeignNode[Reshape_626 + Transpose_627...Transpose_686 + Reshape_687]}
+Conv_688
+{ForeignNode[backbone.block4.0.mlp.fc2.bias + (Unnamed Layer* 1017) [Shuffle]...Transpose_756 + Reshape_757]}
+Conv_758
+{ForeignNode[Reshape_865 + Transpose_866...Transpose_803 + Reshape_804]}
+Resize_857
+Resize_835
+Resize_813
+onnx::Concat_1401 copy
+onnx::Concat_1434 copy
+onnx::Concat_1467 copy
+onnx::Concat_1489 copy
+Conv_872 + Relu_873
+Conv_874
+Resize_883
+Reformatting CopyNode for Output Tensor 0 to Resize_883
+Transpose_884 + (Unnamed Layer* 1225) [Shuffle]
+Softmax_885
+(Unnamed Layer* 1227) [Shuffle] + Transpose_886
+ArgMax_887
+
+Bindings:
+img
+logits
+[05/01/2024-16:20:04] [I] Starting inference
+[05/01/2024-16:20:07] [I] Warmup completed 13 queries over 200 ms
+[05/01/2024-16:20:07] [I] Timing trace has 186 queries over 3.03982 s
+[05/01/2024-16:20:07] [I] 
+[05/01/2024-16:20:07] [I] === Trace details ===
+[05/01/2024-16:20:07] [I] Trace averages of 10 runs:
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.2148 ms - Host latency: 16.6075 ms (enqueue 2.08347 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.2554 ms - Host latency: 16.6495 ms (enqueue 2.08232 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.4044 ms - Host latency: 16.796 ms (enqueue 2.03574 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.3064 ms - Host latency: 16.6976 ms (enqueue 2.04366 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.2232 ms - Host latency: 16.6155 ms (enqueue 2.05839 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.2539 ms - Host latency: 16.6505 ms (enqueue 2.14468 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.276 ms - Host latency: 16.6725 ms (enqueue 2.05608 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.2423 ms - Host latency: 16.6394 ms (enqueue 2.06414 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.035 ms - Host latency: 16.432 ms (enqueue 2.04615 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.132 ms - Host latency: 16.5284 ms (enqueue 2.06797 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.1055 ms - Host latency: 16.5038 ms (enqueue 2.03433 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.3812 ms - Host latency: 16.7763 ms (enqueue 2.04185 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.2158 ms - Host latency: 16.6136 ms (enqueue 2.0499 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.435 ms - Host latency: 16.8349 ms (enqueue 2.06648 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.3678 ms - Host latency: 16.768 ms (enqueue 2.06851 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.2597 ms - Host latency: 16.6569 ms (enqueue 2.06873 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.1827 ms - Host latency: 16.5789 ms (enqueue 2.07227 ms)
+[05/01/2024-16:20:07] [I] Average on 10 runs - GPU latency: 16.1312 ms - Host latency: 16.5275 ms (enqueue 2.04543 ms)
+[05/01/2024-16:20:07] [I] 
+[05/01/2024-16:20:07] [I] === Performance summary ===
+[05/01/2024-16:20:07] [I] Throughput: 61.1878 qps
+[05/01/2024-16:20:07] [I] Latency: min = 15.5627 ms, max = 17.2366 ms, mean = 16.6506 ms, median = 16.7267 ms, percentile(90%) = 17.0793 ms, percentile(95%) = 17.1143 ms, percentile(99%) = 17.2226 ms
+[05/01/2024-16:20:07] [I] Enqueue Time: min = 1.18506 ms, max = 2.81934 ms, mean = 2.06271 ms, median = 2.06927 ms, percentile(90%) = 2.0943 ms, percentile(95%) = 2.12708 ms, percentile(99%) = 2.34644 ms
+[05/01/2024-16:20:07] [I] H2D Latency: min = 0.285889 ms, max = 0.332153 ms, mean = 0.303794 ms, median = 0.304077 ms, percentile(90%) = 0.308716 ms, percentile(95%) = 0.310303 ms, percentile(99%) = 0.326416 ms
+[05/01/2024-16:20:07] [I] GPU Compute Time: min = 15.1653 ms, max = 16.8407 ms, mean = 16.2546 ms, median = 16.3328 ms, percentile(90%) = 16.681 ms, percentile(95%) = 16.7189 ms, percentile(99%) = 16.8376 ms
+[05/01/2024-16:20:07] [I] D2H Latency: min = 0.0864258 ms, max = 0.0986328 ms, mean = 0.0921801 ms, median = 0.092041 ms, percentile(90%) = 0.0955811 ms, percentile(95%) = 0.0964355 ms, percentile(99%) = 0.0975342 ms
+[05/01/2024-16:20:07] [I] Total Host Walltime: 3.03982 s
+[05/01/2024-16:20:07] [I] Total GPU Compute Time: 3.02336 s
+[05/01/2024-16:20:07] [W] * GPU compute time is unstable, with coefficient of variance = 2.34165%.
+[05/01/2024-16:20:07] [W]   If not already in use, locking GPU clock frequency or adding --useSpinWait may improve the stability.
+[05/01/2024-16:20:07] [I] Explanations of the performance metrics are printed in the verbose logs.
+[05/01/2024-16:20:07] [I] 
+&&&& PASSED TensorRT.trtexec [TensorRT v8601] # /usr/local/TensorRT-8.6.1.6/bin/trtexec --onnx=./segformer.b1.512x512.ade.160k.onnx --saveEngine=./segformer.engine --dumpLayerInfo
